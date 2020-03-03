@@ -23,4 +23,17 @@
     <string name="bilgi_bankasi_string">Bilgi Bankası</string>
     <string name="uzmana_sor_string">Uzmana Sor</string>
     <string name="bildirimler_string">Bildirimler</string>
+
+
+    <string name="login">Giriş Yap</string>
+    <string name="phoneHint">Telefon Numaranız (05XXXXXXXXX)</string>
+    <string name="passwordHint">Şifre</string>
+    <string name="userRight">Kişisel Verilerin işlenmesi metnini okudum ve onaylıyorum</string>
+    <string name="txtCredits">
+        <a href="http://www.google.com">Kişisel Verilerin işlenmesi metnini okudum ve onaylıyorum</a>
+    </string>
+
+    <string name="privacy_policy">Gizlilik Politikası</string>
+    <string name="loading">yükleniyor</string>
+
 </resources>

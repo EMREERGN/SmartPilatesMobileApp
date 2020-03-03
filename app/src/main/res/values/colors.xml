@@ -5,4 +5,7 @@
     <color name="colorAccent">#58a5f0</color>
     <color name="colorButton">#e1f5fe</color>
 
+    <color name="black_overlay">#484848</color>
+    <color name="linkColor">#1565c0</color>
+
 </resources>

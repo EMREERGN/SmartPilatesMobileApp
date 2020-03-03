@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+        Copyright (C) 2019 burakgon ltd - All Rights Reserved
+        You can not copy, redistribute and modify and share this code without written permission from burakgon ltd.
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:minWidth="400dp"
+    android:minHeight="400dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:textSize="17dp"
+        android:textColor="#000000"
+        android:typeface="monospace"
+        android:text="@string/privacy_policy"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/license_scroolview"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/license_textview"
+                android:padding="19dp"
+                android:textSize="12dp"
+                android:textColor="#000000"
+                android:typeface="monospace"
+                android:text="Loading licenses..."
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/loading_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="100dp"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="16dp"
+                    android:textColor="#212121"
+                    android:text="@string/loading"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <Button
+            android:textColor="@color/colorPrimary"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_margin="16dp"
+        android:id="@+id/ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@android:string/ok"
+       />
+</LinearLayout>
