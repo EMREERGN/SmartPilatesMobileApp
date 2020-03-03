@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home_string" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/profile_string" />
+        <item
+            android:id="@+id/nav_member_data"
+            android:icon="@drawable/ic_data_member"
+            android:title="@string/data_member_string" />
+        <item
+            android:id="@+id/nav_lesson_calendar"
+            android:icon="@drawable/ic_calendar"
+            android:title="@string/lesson_calendar_string" />
+
+
+        <item
+            android:id="@+id/nav_measurement_information"
+            android:icon="@drawable/ic_body"
+            android:title="@string/measurement_information_string" />
+
+        <item
+            android:id="@+id/nav_diyet_list"
+            android:icon="@drawable/ic_list"
+            android:title="@string/diyet_listesi_string" />
+
+
+        <item
+            android:id="@+id/nav_bilgi_bankasi"
+            android:icon="@drawable/ic_highlight"
+            android:title="@string/bilgi_bankasi_string" />
+
+        <item
+            android:id="@+id/nav_uzmana_sor"
+            android:icon="@drawable/ic_send"
+            android:title="@string/uzmana_sor_string" />
+
+
+
+
+
+    </group>
+
+    <item android:title="@string/support">
+        <menu>
+            <item
+                android:id="@+id/nav_notifications"
+                android:icon="@drawable/ic_notifications"
+                android:title="@string/bildirimler_string" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/menu_send" />
+        </menu>
+    </item>
+
+</menu>
