@@ -1,5 +1,8 @@
 package com.smartpilates.mobile.retrofit
 
+import android.database.Observable
+import com.smartpilates.mobile.model.LessonsGetDataModel
+import com.smartpilates.mobile.model.LessonsPostDataModel
 import com.smartpilates.mobile.model.LoginGetDataModel
 import com.smartpilates.mobile.model.LoginPostDataModel
 import retrofit2.Call
@@ -11,6 +14,7 @@ interface IApi {
     @POST("sent/login")
     fun postData(@Body loginPostModel: LoginPostDataModel): Call<LoginGetDataModel>
 
-
+    @POST("get/lessons")
+    fun postLessonData(@Body lessonPostData: LessonsPostDataModel): Observable<ArrayList<LessonsGetDataModel>>
 
 }

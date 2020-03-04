@@ -7,37 +7,65 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.smartpilates.mobile.ui.home.HomeFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+
+    </fragment>
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.smartpilates.mobile.ui.gallery.GalleryFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_member_data"
-        android:name="com.smartpilates.mobile.ui.slideshow.SlideshowFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_member_data" />
 
     <fragment
         android:id="@+id/nav_lesson_calendar"
-        android:name="com.smartpilates.mobile.ui.tools.ToolsFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.lessonCalendar.LessonFragment"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_lesson_calendar" />
 
+
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.smartpilates.mobile.ui.share.ShareFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.share.ShareFragment"
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="com.smartpilates.mobile.ui.send.SendFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+    <fragment
+        android:id="@+id/nav_measurement_information"
+        android:name="com.smartpilates.mobile.fragmentsUi.MeasurementFragment"
+        android:label="fragment_measurement"
+        tools:layout="@layout/fragment_measurement" />
+    <fragment
+        android:id="@+id/nav_diyet_list"
+        android:name="com.smartpilates.mobile.fragmentsUi.DietListesiFragment"
+        android:label="fragment_diet_listesi"
+        tools:layout="@layout/fragment_diet_listesi" />
+    <fragment
+        android:id="@+id/nav_bilgi_bankasi"
+        android:name="com.smartpilates.mobile.fragmentsUi.BilgiBankasiFragment"
+        android:label="fragment_bilgi_bankasi"
+        tools:layout="@layout/fragment_bilgi_bankasi" />
+    <fragment
+        android:id="@+id/nav_uzmana_sor"
+        android:name="com.smartpilates.mobile.fragmentsUi.UzmanaSorFragment"
+        android:label="fragment_uzmana_sor"
+        tools:layout="@layout/fragment_uzmana_sor" />
+    <fragment
+        android:id="@+id/nav_notifications"
+        android:name="com.smartpilates.mobile.fragmentsUi.BildirimlerFragment"
+        android:label="fragment_bildirimler"
+        tools:layout="@layout/fragment_bildirimler" />
 </navigation>

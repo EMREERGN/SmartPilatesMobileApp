@@ -13,16 +13,25 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import com.smartpilates.mobile.helpers.MyDialogHelper
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private val myDialogHelper=MyDialogHelper(this)
+
+    override fun onBackPressed() {
+        myDialogHelper.areYouSureQuit()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        buttonListeners()
+
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
@@ -37,12 +46,16 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home, R.id.nav_profile, R.id.nav_member_data,
-                R.id.nav_lesson_calendar, R.id.nav_share, R.id.nav_send
+                R.id.nav_lesson_calendar, R.id.nav_measurement_information, R.id.nav_diyet_list,
+                R.id.nav_bilgi_bankasi,R.id.nav_uzmana_sor,R.id.nav_notifications,R.id.nav_share,R.id.nav_send
+
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -53,5 +66,9 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    private fun buttonListeners() {
+
     }
 }

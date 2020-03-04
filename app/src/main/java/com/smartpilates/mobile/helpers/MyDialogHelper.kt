@@ -11,6 +11,8 @@ import android.view.Window
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import com.smartpilates.mobile.R
 import java.io.ByteArrayOutputStream
 import java.io.IOException
@@ -77,4 +79,33 @@ class MyDialogHelper(private val activity: Activity) {
         }
         return byteArrayOutputStream.toString()
     }
+
+
+
+    fun areYouSureQuit(){
+        AlertDialog.Builder(activity)
+            .setTitle("Çıkış Yapmak Üzeresiniz")
+            .setMessage("Emin Misiniz ?")
+            .setPositiveButton("EVET")
+            { dialog, which ->
+
+                activity.finish()
+                dialog!!.dismiss()// kapat
+
+            }
+            .setNegativeButton("HAYIR"){
+                    dialog, which ->
+                dialog.dismiss()
+            }
+            .setNegativeButtonIcon(ContextCompat.getDrawable(activity,R.drawable.ic_close_red))
+            .setPositiveButtonIcon(ContextCompat.getDrawable(activity,R.drawable.ic_done_green))
+            .show()
+    }
+
+
+
+
+
+
+
 }

@@ -1,4 +1,4 @@
-package com.smartpilates.mobile.ui.share
+package com.smartpilates.mobile.fragmentsUi.share
 
 import android.os.Bundle
 import android.view.LayoutInflater

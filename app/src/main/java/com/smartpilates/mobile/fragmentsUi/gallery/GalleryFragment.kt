@@ -1,4 +1,4 @@
-package com.smartpilates.mobile.ui.home
+package com.smartpilates.mobile.fragmentsUi.gallery
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,22 +10,22 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.smartpilates.mobile.R
 
-class HomeFragment : Fragment() {
+class GalleryFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var galleryViewModel: GalleryViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        //val textView: TextView = root.findViewById(R.id.text_home)
-        /*homeViewModel.text.observe(this, Observer {
+        galleryViewModel =
+            ViewModelProviders.of(this).get(GalleryViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_profile, container, false)
+        val textView: TextView = root.findViewById(R.id.text_gallery)
+        galleryViewModel.text.observe(this, Observer {
             textView.text = it
-        })*/
+        })
         return root
     }
 }
