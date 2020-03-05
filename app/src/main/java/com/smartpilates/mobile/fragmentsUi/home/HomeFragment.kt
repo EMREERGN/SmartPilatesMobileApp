@@ -7,15 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 
 import androidx.navigation.NavController
 import androidx.navigation.Navigation.findNavController
 import com.smartpilates.mobile.R
-
+import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class HomeFragment : Fragment() {
 
+    private lateinit var homeViewModel: HomeViewModel
     lateinit var navController:NavController
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,6 +32,11 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        homeViewModel=ViewModelProviders.of(this).get(HomeViewModel::class.java)
+        homeViewModel.userName.observe(this, Observer {
+            textViewWelcome.text = it
+        })
 
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 

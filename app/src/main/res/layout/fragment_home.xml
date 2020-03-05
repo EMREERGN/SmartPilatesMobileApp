@@ -17,6 +17,24 @@
     </androidx.appcompat.widget.AppCompatImageView>
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="5dp"
+        app:cardCornerRadius="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+            android:id="@+id/textViewWelcome"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.appcompat.widget.AppCompatTextView>
+    </androidx.cardview.widget.CardView>
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/lessonCalenndarContainer"

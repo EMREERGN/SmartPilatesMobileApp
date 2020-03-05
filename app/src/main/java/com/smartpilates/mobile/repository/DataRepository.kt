@@ -39,10 +39,6 @@ class DataRepository {
                 }
             })
 
-
-
-
-
             return data
         }
     }
