@@ -15,6 +15,6 @@ interface IApi {
     fun postData(@Body loginPostModel: LoginPostDataModel): Call<LoginGetDataModel>
 
     @POST("get/lessons")
-    fun postLessonData(@Body lessonPostData: LessonsPostDataModel): Observable<ArrayList<LessonsGetDataModel>>
+    fun postLessonData(@Body lessonPostData: LessonsPostDataModel): Call<ArrayList<LessonsGetDataModel>>
 
 }

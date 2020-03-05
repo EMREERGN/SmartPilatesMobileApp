@@ -11,6 +11,27 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
 
+        <action
+            android:id="@+id/action_nav_home_to_nav_lesson_calendar"
+            app:destination="@id/nav_lesson_calendar" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_member_data"
+            app:destination="@id/nav_member_data" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_measurement_information"
+            app:destination="@id/nav_measurement_information" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_diyet_list"
+            app:destination="@id/nav_diyet_list" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_bilgi_bankasi"
+            app:destination="@id/nav_bilgi_bankasi" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_uzmana_sor"
+            app:destination="@id/nav_uzmana_sor" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_profile"
+            app:destination="@id/nav_profile" />
     </fragment>
 
     <fragment
@@ -27,7 +48,7 @@
 
     <fragment
         android:id="@+id/nav_lesson_calendar"
-        android:name="com.smartpilates.mobile.fragmentsUi.lessonCalendar.LessonFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.lessons.LessonFragment"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_lesson_calendar" />
 

@@ -1,40 +1,39 @@
 package com.smartpilates.mobile.fragmentsUi.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+
+import androidx.navigation.NavController
+import androidx.navigation.Navigation.findNavController
 import com.smartpilates.mobile.R
-import com.smartpilates.mobile.fragmentsUi.lessonCalendar.LessonFragment
+
+
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    lateinit var navController:NavController
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navController=findNavController(view)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        //val textView: TextView = root.findViewById(R.id.text_home)
-        /*homeViewModel.text.observe(this, Observer {
-            textView.text = it
-        })*/
 
         buttonListener(root)
         return root
-
-
-
-
-
 
     }
 
@@ -49,18 +48,33 @@ class HomeFragment : Fragment() {
         val profilContainer=root.findViewById<CardView>(R.id.profilContainer)
 
         lessonCalenndarContainer.setOnClickListener {
-
-
-            val transaction = activity?.supportFragmentManager!!.beginTransaction().apply {
-                // Replace whatever is in the fragment_container view with this fragment,
-                // and add the transaction to the back stack so the user can navigate back
-                replace(R.id.nav_host_fragment,LessonFragment() )
-                addToBackStack(null)
-            }.commit()
-
-            Toast.makeText(root.context,"lessonCalenndarContainer",Toast.LENGTH_SHORT).show()
-
+            navController.navigate(R.id.action_nav_home_to_nav_lesson_calendar)
         }
+
+        memberDatasContainer.setOnClickListener {
+            navController.navigate(R.id.action_nav_home_to_nav_member_data)
+        }
+
+        measurementInfoContainer.setOnClickListener {
+            navController.navigate(R.id.action_nav_home_to_nav_measurement_information)
+        }
+
+        dietListContainer.setOnClickListener {
+            navController.navigate(R.id.action_nav_home_to_nav_diyet_list)
+        }
+
+        bilgiBankContainer.setOnClickListener {
+            navController.navigate(R.id.action_nav_home_to_nav_bilgi_bankasi)
+        }
+
+        askUzmanContainer.setOnClickListener {
+            navController.navigate(R.id.action_nav_home_to_nav_uzmana_sor)
+        }
+
+        profilContainer.setOnClickListener {
+            navController.navigate(R.id.action_nav_home_to_nav_profile)
+        }
+
 
     }
 }
