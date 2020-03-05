@@ -68,4 +68,8 @@
     <string name="sol_kol">Sol Kol:</string>
     <string name="notlar">Notlar:</string>
 
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
 </resources>

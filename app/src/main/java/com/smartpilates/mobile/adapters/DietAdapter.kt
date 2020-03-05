@@ -1,15 +1,21 @@
 package com.smartpilates.mobile.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 import com.smartpilates.mobile.R
+import com.smartpilates.mobile.WebViewActivity
 import com.smartpilates.mobile.model.DietModel
 
 
 class DietViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+    val context=view.context
+
     val tarih=view.findViewById<TextView>(R.id.tarihTxtDiet)
     val boy=view.findViewById<TextView>(R.id.boyTxtDiet)
     val kilo=view.findViewById<TextView>(R.id.kiloTxtDiet)
@@ -26,6 +32,7 @@ class DietViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val sagKol=view.findViewById<TextView>(R.id.sagKolTxtDiet)
     val solKol=view.findViewById<TextView>(R.id.solKolTxtDiet)
     val note=view.findViewById<TextView>(R.id.noteTxtDiet)
+    val raporButton=view.findViewById<MaterialButton>(R.id.raporBtnDiet)
 
 }
 
@@ -63,6 +70,16 @@ class DietAdapter(private val dietList: ArrayList<DietModel>) :
         holder.sagKol.text=diet.sag_kol
         holder.solKol.text=diet.sol_kol
         holder.note.text=diet.detail
+
+
+
+        // Rapor görüntüleme
+
+        holder.raporButton.setOnClickListener {
+            val intent=Intent(holder.context,WebViewActivity::class.java)
+            intent.putExtra(WebViewActivity.RAPOR_ID,diet.id)
+            holder.context.startActivity(intent)
+        }
 
 
 
