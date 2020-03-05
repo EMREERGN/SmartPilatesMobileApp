@@ -45,5 +45,27 @@
     <string name="end_date_string">Bitiş Tarihi :</string>
     <string name="complete_lesson_string">Tamamlanan Ders :</string>
     <string name="total_price_string">Toplam Tutar :</string>
+    <string name="name_string">Adınız : </string>
+    <string name="surname_string">Soyadınız : </string>
+    <string name="mail_string">Email :</string>
+    <string name="phone_number_string">Telefon Numaranız :</string>
+    <string name="birth_date_string">Doğum Tarihi :</string>
+    <string name="address_string">Adress :</string>
+    <string name="notes_string">Notlar :</string>
+    <string name="kilo_string">Kilo:</string>
+    <string name="boy_string">Boy:</string>
+    <string name="yag_orani_string">Yağ Oranı:</string>
+    <string name="kas_orani_string">Kas Oranı:</string>
+    <string name="bel_string">Bel:</string>
+    <string name="gogus_string">Göğüs:</string>
+    <string name="kalca_string">Kalça:</string>
+    <string name="karin_string">Karın:</string>
+    <string name="basen_string">Basen:</string>
+    <string name="omuz_string">Omuz:</string>
+    <string name="sag_bacak">Sağ Bacak:</string>
+    <string name="sol_bacak">Sol Bacak:</string>
+    <string name="sag_kol">Sağ Kol:</string>
+    <string name="sol_kol">Sol Kol:</string>
+    <string name="notlar">Notlar:</string>
 
 </resources>

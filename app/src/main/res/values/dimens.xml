@@ -9,4 +9,5 @@
     <dimen name="fab_margin_custom_bottom">22dp</dimen>
 
     <dimen name="card_text_margin">20dp</dimen>
+    <dimen name="diet_card_padding">10dp</dimen>
 </resources>

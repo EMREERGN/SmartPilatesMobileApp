@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView
+    android:elevation="5dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:padding="@dimen/diet_card_padding"
+                android:background="@drawable/gradiant_red"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/ic_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                </ImageView>
+
+                <TextView
+                    android:text="@string/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                </TextView>
+                <TextView
+                    android:id="@+id/tarihTxtDiet"
+                    android:textStyle="bold"
+                    tools:text="1 OCAK 2020"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                </TextView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="@dimen/diet_card_padding"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="@string/boy_string"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/boyTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/kilo_string"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/kiloTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/yag_orani_string"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/yagTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="@dimen/diet_card_padding"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="@string/kas_orani_string"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/kasTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/bel_string"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/belTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/gogus_string"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/gogusTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="@dimen/diet_card_padding"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="@string/kalca_string"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/kalcaTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/karin_string"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/karinTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/basen_string"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/basenTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="@dimen/diet_card_padding"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/omuz_string">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/omuzTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/sag_bacak"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/sagBacakTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/sol_bacak"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/solBacakTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="@dimen/diet_card_padding"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/sag_kol">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/sagKolTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/sol_kol"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/solKolTxtDiet"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:padding="@dimen/diet_card_padding"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/notlar">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:id="@+id/noteTxtDiet"
+                        android:textStyle="italic"
+                        android:layout_weight="1"
+                        tools:text="177"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/raporBtnDiet"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Raporu Görüntüle"
+                app:strokeColor="@android:color/holo_green_dark">
+
+            </com.google.android.material.button.MaterialButton>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+

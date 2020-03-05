@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.smartpilates.mobile.fragmentsUi.gallery.GalleryFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.profil.ProfileFragment"
         android:label="@string/profile_string"
         tools:layout="@layout/fragment_profile" />
 
@@ -66,7 +66,7 @@
         tools:layout="@layout/fragment_send" />
     <fragment
         android:id="@+id/nav_measurement_information"
-        android:name="com.smartpilates.mobile.fragmentsUi.MeasurementFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.measurement.MeasurementFragment"
         android:label="@string/measurement_information_string"
         tools:layout="@layout/fragment_measurement" />
     <fragment

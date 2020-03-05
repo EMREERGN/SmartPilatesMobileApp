@@ -2,9 +2,7 @@ package com.smartpilates.mobile.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.smartpilates.mobile.model.LessonsGetDataModel
-import com.smartpilates.mobile.model.MemberSalesModel
-import com.smartpilates.mobile.model.UserIDPostModel
+import com.smartpilates.mobile.model.*
 import com.smartpilates.mobile.retrofit.IApi
 import com.smartpilates.mobile.retrofit.RetrofitClient
 import retrofit2.Call
@@ -67,7 +65,52 @@ class DataRepository {
         }
 
 
+        fun getProfile(userID: String):LiveData<ProfileModel>{
+            val retrofit=RetrofitClient.instance
+            val api=retrofit.create(IApi::class.java)
 
+            val postUserModel= UserIDPostModel(userID)
+            val data=MutableLiveData<ProfileModel>()
+
+            api.postProfile(postUserModel).enqueue(object :Callback<ProfileModel>{
+                override fun onFailure(call: Call<ProfileModel>, t: Throwable) {
+
+                }
+
+                override fun onResponse(
+                    call: Call<ProfileModel>,
+                    response: Response<ProfileModel>
+                ) {
+                    data.value=response.body()
+                }
+
+            })
+            return data
+        }
+
+
+        fun getDietList(userID: String):LiveData<ArrayList<DietModel>>{
+            val retrofit=RetrofitClient.instance
+            val api=retrofit.create(IApi::class.java)
+
+            val postUserModel= UserIDPostModel(userID)
+            val data=MutableLiveData<ArrayList<DietModel>>()
+
+            api.postDiet(postUserModel).enqueue(object :Callback<ArrayList<DietModel>>{
+                override fun onFailure(call: Call<ArrayList<DietModel>>, t: Throwable) {
+
+                }
+
+                override fun onResponse(
+                    call: Call<ArrayList<DietModel>>,
+                    response: Response<ArrayList<DietModel>>
+                ) {
+                    data.value=response.body()
+                }
+
+            })
+            return data
+        }
 
 
 

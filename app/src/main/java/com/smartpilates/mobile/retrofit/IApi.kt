@@ -16,4 +16,10 @@ interface IApi {
     @POST("get/sales")
     fun postMemberSales(@Body userIdPostModel: UserIDPostModel): Call<ArrayList<MemberSalesModel>>
 
+    @POST("get/profile")
+    fun postProfile(@Body userIdPostModel: UserIDPostModel): Call<ProfileModel>
+
+    @POST("get/diyetInfo")
+    fun postDiet(@Body userIdPostModel: UserIDPostModel): Call<ArrayList<DietModel>>
+
 }
