@@ -37,19 +37,19 @@
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.smartpilates.mobile.fragmentsUi.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/profile_string"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_member_data"
         android:name="com.smartpilates.mobile.fragmentsUi.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/data_member_string"
         tools:layout="@layout/fragment_member_data" />
 
     <fragment
         android:id="@+id/nav_lesson_calendar"
         android:name="com.smartpilates.mobile.fragmentsUi.lessons.LessonFragment"
-        android:label="@string/menu_tools"
+        android:label="@string/lesson_calendar_string"
         tools:layout="@layout/fragment_lesson_calendar" />
 
 
@@ -67,26 +67,26 @@
     <fragment
         android:id="@+id/nav_measurement_information"
         android:name="com.smartpilates.mobile.fragmentsUi.MeasurementFragment"
-        android:label="fragment_measurement"
+        android:label="@string/measurement_information_string"
         tools:layout="@layout/fragment_measurement" />
     <fragment
         android:id="@+id/nav_diyet_list"
         android:name="com.smartpilates.mobile.fragmentsUi.DietListesiFragment"
-        android:label="fragment_diet_listesi"
+        android:label="@string/diyet_listesi_string"
         tools:layout="@layout/fragment_diet_listesi" />
     <fragment
         android:id="@+id/nav_bilgi_bankasi"
         android:name="com.smartpilates.mobile.fragmentsUi.BilgiBankasiFragment"
-        android:label="fragment_bilgi_bankasi"
+        android:label="@string/bilgi_bankasi_string"
         tools:layout="@layout/fragment_bilgi_bankasi" />
     <fragment
         android:id="@+id/nav_uzmana_sor"
         android:name="com.smartpilates.mobile.fragmentsUi.UzmanaSorFragment"
-        android:label="fragment_uzmana_sor"
+        android:label="@string/uzmana_sor_string"
         tools:layout="@layout/fragment_uzmana_sor" />
     <fragment
         android:id="@+id/nav_notifications"
         android:name="com.smartpilates.mobile.fragmentsUi.BildirimlerFragment"
-        android:label="fragment_bildirimler"
+        android:label="@string/bildirimler_string"
         tools:layout="@layout/fragment_bildirimler" />
 </navigation>
