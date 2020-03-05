@@ -1,10 +1,6 @@
 package com.smartpilates.mobile.retrofit
 
-import android.database.Observable
-import com.smartpilates.mobile.model.LessonsGetDataModel
-import com.smartpilates.mobile.model.LessonsPostDataModel
-import com.smartpilates.mobile.model.LoginGetDataModel
-import com.smartpilates.mobile.model.LoginPostDataModel
+import com.smartpilates.mobile.model.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -15,6 +11,9 @@ interface IApi {
     fun postData(@Body loginPostModel: LoginPostDataModel): Call<LoginGetDataModel>
 
     @POST("get/lessons")
-    fun postLessonData(@Body lessonPostData: LessonsPostDataModel): Call<ArrayList<LessonsGetDataModel>>
+    fun postLessonData(@Body lessonPost: UserIDPostModel): Call<ArrayList<LessonsGetDataModel>>
+
+    @POST("get/sales")
+    fun postMemberSales(@Body userIdPostModel: UserIDPostModel): Call<ArrayList<MemberSalesModel>>
 
 }

@@ -41,5 +41,9 @@
     <string name="place">Yer :</string>
     <string name="time">Saat :</string>
     <string name="date">Tarih :</string>
+    <string name="start_date_string">Başlangıç Tarihi :</string>
+    <string name="end_date_string">Bitiş Tarihi :</string>
+    <string name="complete_lesson_string">Tamamlanan Ders :</string>
+    <string name="total_price_string">Toplam Tutar :</string>
 
 </resources>

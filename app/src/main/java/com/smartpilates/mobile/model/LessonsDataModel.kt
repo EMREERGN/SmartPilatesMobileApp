@@ -20,7 +20,7 @@ data class LessonsGetDataModel(
     ) {
 }
 
-data class LessonsPostDataModel(
+data class UserIDPostModel(
     @SerializedName("user_id")
     val user_id:String
 ) {

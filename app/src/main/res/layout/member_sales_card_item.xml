@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    style="@style/Platform.MaterialComponents.Light"
+    app:cardBackgroundColor="@android:color/white"
+    android:elevation="5dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/futureLessonsCardContainer"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:background="@drawable/gradiant_red"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_touch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lessonTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Ev Egzersizleri#1"
+                android:textColor="#000000"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:weightSum="10"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_start_date"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_weight="4"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/start_date_string"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_weight="5"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black_overlay"
+                    android:id="@+id/startDateMemberSales"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:weightSum="10"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_end_date"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_weight="4"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/end_date_string"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/endDateMemberSales"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="5"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black_overlay" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:weightSum="10"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_library"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textColor="@android:color/black"
+                    android:layout_weight="4"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text="Toplam Ders Sayısı :"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalLessonCountMemberSales"
+                    android:textColor="@color/black_overlay"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:weightSum="10"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_check_black"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textColor="@android:color/black"
+                    android:layout_weight="4"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/complete_lesson_string"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/completedLessonsMemberSales"
+
+                    android:textColor="@color/black_overlay"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:weightSum="10"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_money"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textColor="@android:color/black"
+                    android:layout_weight="4"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/total_price_string"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalPriceMemberSales"
+                    android:textColor="@color/black_overlay"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
