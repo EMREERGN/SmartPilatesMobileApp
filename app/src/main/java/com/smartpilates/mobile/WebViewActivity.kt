@@ -18,6 +18,7 @@ class WebViewActivity : AppCompatActivity() {
         const val RAPOR_ID="RAPOR_ID"
     }
 
+
     @SuppressLint("NewApi", "SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

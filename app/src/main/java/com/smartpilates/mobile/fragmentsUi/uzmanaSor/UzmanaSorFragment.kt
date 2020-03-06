@@ -1,4 +1,4 @@
-package com.smartpilates.mobile.fragmentsUi
+package com.smartpilates.mobile.fragmentsUi.uzmanaSor
 
 
 import android.os.Bundle
@@ -11,14 +11,14 @@ import com.smartpilates.mobile.R
 /**
  * A simple [Fragment] subclass.
  */
-class BildirimlerFragment : Fragment() {
+class UzmanaSorFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bildirimler, container, false)
+        return inflater.inflate(R.layout.fragment_uzmana_sor, container, false)
     }
 
 

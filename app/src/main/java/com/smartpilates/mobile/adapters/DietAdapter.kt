@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.smartpilates.mobile.R
 import com.smartpilates.mobile.WebViewActivity
-import com.smartpilates.mobile.model.DietModel
+import com.smartpilates.mobile.model.DietInfoModel
 
 
 class DietViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -37,7 +37,7 @@ class DietViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 }
 
 
-class DietAdapter(private val dietList: ArrayList<DietModel>) :
+class DietAdapter(private val dietInfoList: ArrayList<DietInfoModel>) :
     RecyclerView.Adapter<DietViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DietViewHolder {
 
@@ -48,11 +48,11 @@ class DietAdapter(private val dietList: ArrayList<DietModel>) :
     }
 
     override fun getItemCount(): Int {
-        return dietList.size
+        return dietInfoList.size
     }
 
     override fun onBindViewHolder(holder: DietViewHolder, position: Int) {
-        val diet = dietList[position]
+        val diet = dietInfoList[position]
 
         holder.tarih.text=diet.created_at
         holder.boy.text=diet.boy

@@ -71,5 +71,6 @@
     <string name="title_activity_web_view">WebViewActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="anamnez_string">Kayıt Esnasında size özel hazırlanan anamnez raporunuzu görüntüleyebilirsiniz</string>
 
 </resources>

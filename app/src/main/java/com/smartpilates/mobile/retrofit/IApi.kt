@@ -20,6 +20,10 @@ interface IApi {
     fun postProfile(@Body userIdPostModel: UserIDPostModel): Call<ProfileModel>
 
     @POST("get/diyetInfo")
-    fun postDiet(@Body userIdPostModel: UserIDPostModel): Call<ArrayList<DietModel>>
+    fun postDiet(@Body userIdPostModel: UserIDPostModel): Call<ArrayList<DietInfoModel>>
+
+
+    @POST("get/diyetList")
+    fun postDietList(@Body userIdPostModel: UserIDPostModel): Call<ArrayList<DietListModel>>
 
 }

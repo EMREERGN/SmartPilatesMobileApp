@@ -2,7 +2,7 @@ package com.smartpilates.mobile.model
 
 import com.google.gson.annotations.SerializedName
 
-data class DietModel(
+data class DietInfoModel(
     @SerializedName("id")
     val id: String,
 

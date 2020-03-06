@@ -8,7 +8,6 @@ import com.smartpilates.mobile.retrofit.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.reflect.Member
 import kotlin.collections.ArrayList
 
 class DataRepository {
@@ -89,21 +88,21 @@ class DataRepository {
         }
 
 
-        fun getDietList(userID: String):LiveData<ArrayList<DietModel>>{
+        fun getDietInfoList(userID: String):LiveData<ArrayList<DietInfoModel>>{
             val retrofit=RetrofitClient.instance
             val api=retrofit.create(IApi::class.java)
 
             val postUserModel= UserIDPostModel(userID)
-            val data=MutableLiveData<ArrayList<DietModel>>()
+            val data=MutableLiveData<ArrayList<DietInfoModel>>()
 
-            api.postDiet(postUserModel).enqueue(object :Callback<ArrayList<DietModel>>{
-                override fun onFailure(call: Call<ArrayList<DietModel>>, t: Throwable) {
+            api.postDiet(postUserModel).enqueue(object :Callback<ArrayList<DietInfoModel>>{
+                override fun onFailure(call: Call<ArrayList<DietInfoModel>>, t: Throwable) {
 
                 }
 
                 override fun onResponse(
-                    call: Call<ArrayList<DietModel>>,
-                    response: Response<ArrayList<DietModel>>
+                    call: Call<ArrayList<DietInfoModel>>,
+                    response: Response<ArrayList<DietInfoModel>>
                 ) {
                     data.value=response.body()
                 }
@@ -113,6 +112,29 @@ class DataRepository {
         }
 
 
+
+        fun getDietList(userID: String):LiveData<ArrayList<DietListModel>>{
+            val retrofit=RetrofitClient.instance
+            val api=retrofit.create(IApi::class.java)
+
+            val postUserModel= UserIDPostModel(userID)
+            val data=MutableLiveData<ArrayList<DietListModel>>()
+
+            api.postDietList(postUserModel).enqueue(object :Callback<ArrayList<DietListModel>>{
+                override fun onFailure(call: Call<ArrayList<DietListModel>>, t: Throwable) {
+
+                }
+
+                override fun onResponse(
+                    call: Call<ArrayList<DietListModel>>,
+                    response: Response<ArrayList<DietListModel>>
+                ) {
+                    data.value=response.body()
+                }
+
+            })
+            return data
+        }
 
     }
 

@@ -45,7 +45,7 @@ class MeasurementFragment : Fragment() {
     }
 
     private fun observeViewModel(viewModel: MeasurementViewModel) {
-        viewModel.dietListObservable.observe(this, Observer {
+        viewModel.dietInfoListObservable.observe(this, Observer {
             if (it!=null){
                 val dietAdapter=DietAdapter(it)
                 recyclerViewDiet.adapter=dietAdapter
