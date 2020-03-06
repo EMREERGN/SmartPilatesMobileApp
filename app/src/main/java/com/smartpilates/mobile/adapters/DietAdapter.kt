@@ -75,9 +75,13 @@ class DietAdapter(private val dietInfoList: ArrayList<DietInfoModel>) :
 
         // Rapor görüntüleme
 
+        val pdfLink="https://smartpilates.net/uploads/tanita/${diet.id}.pdf"
+        val fullUrl = "https://docs.google.com/gview?embedded=true&url=$pdfLink"
+
         holder.raporButton.setOnClickListener {
             val intent=Intent(holder.context,WebViewActivity::class.java)
-            intent.putExtra(WebViewActivity.RAPOR_ID,diet.id)
+            intent.putExtra(WebViewActivity.FULL_URL,fullUrl)
+            intent.putExtra(WebViewActivity.PDF_ID,diet.id)
             holder.context.startActivity(intent)
         }
 
