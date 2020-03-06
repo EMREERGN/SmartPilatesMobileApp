@@ -1,9 +1,14 @@
 package com.smartpilates.mobile
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.smartpilates.mobile.helpers.MyDialogHelper
 import com.smartpilates.mobile.helpers.RetrofitHelper
@@ -18,15 +23,6 @@ class LoginActivity : AppCompatActivity() {
 
     private val myDialogHelper= MyDialogHelper(this)
 
-    companion object {
-        const val INTENT_USER_ID_KEY="user_id"
-        const val INTENT_USER_STATUS_KEY="user_status"
-        const val INTENT_USER_INFO_KEY="user_info"
-        const val INTENT_USER_NAME_KEY="user_name"
-        const val LOGIN_GET_DATA_RESPONSE="login_get_data_response"
-    }
-
-
     private lateinit var retrofit: Retrofit
     private lateinit var api: IApi
     private lateinit var retrofitHelper: RetrofitHelper
@@ -40,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onBackPressed() {
         myDialogHelper.areYouSureQuit()
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)

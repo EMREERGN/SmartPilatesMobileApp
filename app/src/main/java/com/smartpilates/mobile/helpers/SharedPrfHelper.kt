@@ -14,23 +14,24 @@ class SharedPrfHelper(private val context: Context) {
         const val USER_NAME_SURNAME_SHARED_PREF_KEY="SHARED_PREF_USERNAME_SMART_PLATES"
         const val PORT_NUMBER_SHARED_PREF_KEY="SHARED_PREF_PORT_NUMBER_SMART_PLATES"
         const val IP_NUMBER_SHARED_PREF_KEY="SHARED_PREF_IP_NUMBER_SMART_PLATES"
-        const val SERVER_PORT_NUMBER_SHARED_PREF_KEY="SHARED_PREF_SERVER_PORT_NUMBER_SMART_PLATES"
+        const val SHOW_NEVER_AGAIN_PERMISSION_SHARED_PREF_KEY="SHOW_NEVER_AGAIN_PERMISSION_SHARED_PREF_KEY"
 
     }
 
-    // Server Port Numarası
-    fun setServerPort(portNumber: Int) {
+    // NEVER Again Check
+    fun setPermissionNeverShowAgain(isCheck: Boolean) {
         val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY,Context.MODE_PRIVATE) ?: return
         with (sharedPref.edit()) {
-            putInt(SERVER_PORT_NUMBER_SHARED_PREF_KEY, portNumber)
+            putBoolean(SHOW_NEVER_AGAIN_PERMISSION_SHARED_PREF_KEY, isCheck)
             commit()
         }
 
     }
 
-    fun getServerPort(): Int {
+    // NEVER Again Check
+    fun getPermissionNeverShowAgain(): Boolean {
         val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
-        return sharedPref.getInt(SERVER_PORT_NUMBER_SHARED_PREF_KEY,7800)
+        return sharedPref.getBoolean(SHOW_NEVER_AGAIN_PERMISSION_SHARED_PREF_KEY,false)
     }
 
 

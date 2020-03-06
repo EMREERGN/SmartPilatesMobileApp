@@ -46,8 +46,6 @@ class RetrofitHelper {
                     sharedPref.saveLoginPref(phoneNumber,password,user_id,userName)
 
                     val intent= Intent(context, MainActivity::class.java)
-                    intent.putExtra(LoginActivity.INTENT_USER_ID_KEY,response.body()!!.id)
-                    intent.putExtra(LoginActivity.INTENT_USER_NAME_KEY,response.body()!!.namesurname)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     context.startActivity(intent)
 
