@@ -78,5 +78,6 @@
     <string name="beslenme">BESLENME</string>
     <string name="saglik">SAĞLIK</string>
     <string name="filter">Filtrele</string>
+    <string name="all_category">Tüm Kategori</string>
 
 </resources>
