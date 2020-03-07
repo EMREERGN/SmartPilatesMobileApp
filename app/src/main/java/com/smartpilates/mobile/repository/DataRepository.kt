@@ -136,6 +136,31 @@ class DataRepository {
             return data
         }
 
+
+        fun getHaberler():LiveData<ArrayList<HaberlerModel>>{
+            val retrofit=RetrofitClient.instance
+            val api=retrofit.create(IApi::class.java)
+
+            val data=MutableLiveData<ArrayList<HaberlerModel>>()
+
+            api.getHaberler().enqueue(object :Callback<ArrayList<HaberlerModel>>{
+                override fun onFailure(call: Call<ArrayList<HaberlerModel>>, t: Throwable) {
+
+                }
+
+                override fun onResponse(
+                    call: Call<ArrayList<HaberlerModel>>,
+                    response: Response<ArrayList<HaberlerModel>>
+                ) {
+
+                   data.value=response.body()
+                }
+
+            })
+
+            return data
+        }
+
     }
 
 }

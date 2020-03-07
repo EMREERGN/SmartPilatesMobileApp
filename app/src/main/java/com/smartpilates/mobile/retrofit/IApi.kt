@@ -3,6 +3,7 @@ package com.smartpilates.mobile.retrofit
 import com.smartpilates.mobile.model.*
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface IApi {
@@ -25,5 +26,8 @@ interface IApi {
 
     @POST("get/diyetList")
     fun postDietList(@Body userIdPostModel: UserIDPostModel): Call<ArrayList<DietListModel>>
+
+    @GET("all/haberler")
+    fun getHaberler(): Call<ArrayList<HaberlerModel>>
 
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            tools:src="@drawable/logo_big"
+            android:id="@+id/imageHaberler"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="100dp">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/titleHaberler"
+                android:layout_margin="10dp"
+                android:gravity="center|start"
+                tools:text="Kadinlar için En iyi 10 egzersiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TextView>
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                </ImageView>
+                <TextView
+                    android:id="@+id/createdAtHaberler"
+                    android:gravity="start|center"
+                    tools:text="19 Ocak 2020 ,19:54"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </TextView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

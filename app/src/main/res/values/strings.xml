@@ -74,5 +74,8 @@
     <string name="anamnez_string">Kayıt Esnasında size özel hazırlanan anamnez raporunuzu görüntüleyebilirsiniz</string>
     <string name="raporu_goruntule">Raporu Görüntüle</string>
     <string name="anamnez_content">Kayıt Esnasında size özel hazırlanan anamnez raporunuzu görüntüleyebilirsiniz</string>
+    <string name="egzersiz">EGZERSİZ</string>
+    <string name="beslenme">BESLENME</string>
+    <string name="saglik">SAĞLIK</string>
 
 </resources>
