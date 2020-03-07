@@ -31,26 +31,31 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:id="@+id/titleHaberler"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="5dp"
                 android:gravity="center|start"
                 tools:text="Kadinlar için En iyi 10 egzersiz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </TextView>
             <LinearLayout
-                android:layout_margin="10dp"
+                android:layout_marginTop="3dp"
+                android:gravity="end"
+                android:layout_marginLeft="5dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_calendar"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
                 </ImageView>
                 <TextView
+                    android:textSize="10sp"
                     android:id="@+id/createdAtHaberler"
                     android:gravity="start|center"
                     tools:text="19 Ocak 2020 ,19:54"

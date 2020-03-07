@@ -77,5 +77,6 @@
     <string name="egzersiz">EGZERSİZ</string>
     <string name="beslenme">BESLENME</string>
     <string name="saglik">SAĞLIK</string>
+    <string name="filter">Filtrele</string>
 
 </resources>

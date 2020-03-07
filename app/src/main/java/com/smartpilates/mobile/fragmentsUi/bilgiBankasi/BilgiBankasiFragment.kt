@@ -1,10 +1,10 @@
 package com.smartpilates.mobile.fragmentsUi.bilgiBankasi
 
 
+import android.os.Build
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.smartpilates.mobile.R
 import com.smartpilates.mobile.adapters.HaberlerAdapter
-import com.smartpilates.mobile.adapters.HaberlerViewHolder
 import com.smartpilates.mobile.model.HaberlerModel
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 
 /**
@@ -46,10 +46,7 @@ class BilgiBankasiFragment : Fragment() {
             layoutManager=LinearLayoutManager(root.context)
         }
 
-
-
-
-
+        setHasOptionsMenu(true)
 
         initTabClickListener()
 
@@ -63,6 +60,14 @@ class BilgiBankasiFragment : Fragment() {
         badge.isVisible = true*/
 
         return root
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main,menu)
+        menu.findItem(R.id.action_filter_bilgi_bank).isVisible = true
+
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     private fun observeViewModel(viewModel: BilgiBankasiViewModel) {
@@ -79,8 +84,10 @@ class BilgiBankasiFragment : Fragment() {
 
     private fun initTabClickListener() {
 
-        bottomNavigationView.setOnNavigationItemReselectedListener {
-            when(it.itemId){
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId){
 
                 R.id.bottom_nav_egzersiz->{
                     filterList("Egzersiz")
@@ -95,11 +102,12 @@ class BilgiBankasiFragment : Fragment() {
 
                 }
             }
+            true
         }
     }
 
     private fun filterList(tag: String) {
-        var filteredList=ArrayList<HaberlerModel>()
+        val filteredList=ArrayList<HaberlerModel>()
         haberlerList.forEach {
             if (it.tags==tag){
                 filteredList.add(it)
