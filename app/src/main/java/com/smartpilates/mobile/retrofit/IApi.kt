@@ -1,6 +1,8 @@
 package com.smartpilates.mobile.retrofit
 
+import android.database.Observable
 import com.smartpilates.mobile.model.*
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -32,5 +34,8 @@ interface IApi {
 
     @POST("get/haber")
     fun postHaberDetay(@Body postID: HaberDetayPostModel): Call<ArrayList<HaberDetayModel>>
+
+    @POST("sent/contact")
+    fun postMessage(@Body sendMessageModel: MessagePostModel):Call<MessageResponseModel>
 
 }

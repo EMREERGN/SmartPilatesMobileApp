@@ -30,7 +30,7 @@
 
 
     <EditText
-        android:id="@+id/uzmanaSorMesajKonusuTxt"
+        android:id="@+id/subjectUzmanaSorTxt"
         android:textColor="@color/colorAccent"
         android:layout_marginTop="30dp"
         android:hint="@string/mesaj_title"
@@ -39,7 +39,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/uzmanaSorMesajContentTxt"
+        android:id="@+id/messageUzmanaSorTxt"
         android:textSize="15sp"
         android:layout_gravity="center"
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
     </EditText>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/uzmanaSorGonderButton"
+        android:id="@+id/sendUzmanaSorBtn"
         app:iconGravity="textStart"
         app:icon="@drawable/ic_send"
         android:text="@string/send_message"
