@@ -3,6 +3,7 @@ package com.smartpilates.mobile.helpers
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.AsyncTask
@@ -14,6 +15,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.smartpilates.mobile.R
+import com.smartpilates.mobile.SplashScreen
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 
@@ -83,6 +85,7 @@ class MyDialogHelper(private val activity: Activity) {
 
 
     fun areYouSureQuit(){
+        val sharedPrfHelper=SharedPrfHelper(activity)
         AlertDialog.Builder(activity)
             .setTitle("Çıkış Yapmak Üzeresiniz")
             .setMessage("Emin Misiniz ?")
@@ -90,6 +93,9 @@ class MyDialogHelper(private val activity: Activity) {
             { dialog, which ->
 
                 activity.finish()
+                sharedPrfHelper.clearUserInfos()
+                val intent=Intent(activity,SplashScreen::class.java)
+                activity.startActivity(intent)
                 dialog!!.dismiss()// kapat
 
             }

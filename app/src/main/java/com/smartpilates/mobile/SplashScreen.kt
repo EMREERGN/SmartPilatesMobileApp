@@ -83,7 +83,8 @@ class SplashScreen : AppCompatActivity() {
     private fun checkUserForLogin() {
 
         val sharedPrefHelper= SharedPrfHelper(this)
-        if (sharedPrefHelper.getUserID().isNotEmpty()){
+        val userId=sharedPrefHelper.getUserID()
+        if (userId.isNotEmpty() && userId!=""){
             val intent= Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             this.startActivity(intent)

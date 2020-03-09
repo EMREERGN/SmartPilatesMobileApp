@@ -82,5 +82,7 @@
     <string name="uzmana_sor_header">Psikolojik ,sağlık ,egzersiz ve beslenme ile ilgili sorularınızı uzmanlarımıza sorabilirsiniz. Hizmet kalitemiz gereği 48 saat içerisinde mesajınız cevaplanacaktır.</string>
     <string name="send_message">Mesajı Gönder</string>
     <string name="mesaj_title">Mesajınızın Konusu</string>
+    <string name="escape">Çıkış Yap</string>
+    <string name="splash_screen">Splash Screen</string>
 
 </resources>

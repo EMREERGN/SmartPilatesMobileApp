@@ -51,7 +51,13 @@ class SharedPrfHelper(private val context: Context) {
         return sharedPref.getString(HABER_ID_SHARED_PREF_KEY,"null")!!
     }
 
-
+    fun setPhoneNumber(number: String) {
+        val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
+        with (sharedPref.edit()) {
+            putString(PHONE_NUMBER_SHARED_PREF_KEY, number)
+            commit()
+        }
+    }
 
     fun getPhoneNumber(): String {
         val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
@@ -59,9 +65,23 @@ class SharedPrfHelper(private val context: Context) {
     }
 
 
+    fun setPassword(password: String) {
+        val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
+        with (sharedPref.edit()) {
+            putString(PASSWORD_SHARED_PREF_KEY, password)
+            commit()
+        }
+    }
     fun getPassword(): String {
         val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
         return sharedPref.getString(PASSWORD_SHARED_PREF_KEY,"")!!
+    }
+    fun setUserID(userID: String) {
+        val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
+        with (sharedPref.edit()) {
+            putString(USER_ID_SHARED_PREF_KEY, userID)
+            commit()
+        }
     }
     fun getUserID(): String {
         val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
@@ -74,25 +94,23 @@ class SharedPrfHelper(private val context: Context) {
         return sharedPref.getString(USER_NAME_SURNAME_SHARED_PREF_KEY,"")!!
     }
 
+    fun clearUserInfos(){
+        setUserID("")
+        setPassword("")
+        setPhoneNumber("")
+    }
+
     fun saveLoginPref(
         phoneNumber: String,
         password: String,
         user_id: String,
         userName: String
     ){
+        setPhoneNumber(phoneNumber)
+        setPassword(password)
+        setUserID(user_id)
+
         val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY,Context.MODE_PRIVATE) ?: return
-        with (sharedPref.edit()) {
-            putString(PHONE_NUMBER_SHARED_PREF_KEY, phoneNumber)
-            commit()
-        }
-        with (sharedPref.edit()) {
-            putString(PASSWORD_SHARED_PREF_KEY, password)
-            commit()
-        }
-        with (sharedPref.edit()) {
-            putString(USER_ID_SHARED_PREF_KEY, user_id)
-            commit()
-        }
         with (sharedPref.edit()) {
             putString(USER_NAME_SURNAME_SHARED_PREF_KEY, userName)
             commit()

@@ -16,4 +16,12 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
 
+    <item
+        android:icon="@drawable/ic_close_red"
+        android:visible="false"
+        android:id="@+id/action_quit_are_you_sure"
+        android:orderInCategory="1"
+        android:title="@string/escape"
+        app:showAsAction="ifRoom" />
+
 </menu>

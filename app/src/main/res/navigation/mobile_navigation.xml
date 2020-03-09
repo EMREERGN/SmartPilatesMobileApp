@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_nav_home_to_nav_profile"
             app:destination="@id/nav_profile" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_splash"
+            app:destination="@id/nav_splash" />
     </fragment>
 
     <fragment
@@ -44,6 +47,12 @@
             app:destination="@id/nav_fragment_banka_detail" >
         </action>
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_splash"
+        android:name="com.smartpilates.mobile.SplashScreen"
+        android:label="@string/splash_screen"
+        tools:layout="@layout/activity_splash_screen" />
 
     <fragment
         android:id="@+id/nav_fragment_banka_detail"

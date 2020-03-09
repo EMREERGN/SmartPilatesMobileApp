@@ -2,10 +2,10 @@ package com.smartpilates.mobile.fragmentsUi.home
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,6 +14,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation.findNavController
 import com.smartpilates.mobile.R
+import com.smartpilates.mobile.fragmentsUi.bottomSheet.CategoryClickListener
+import com.smartpilates.mobile.fragmentsUi.bottomSheet.ItemListDialogFragment
+import com.smartpilates.mobile.helpers.MyDialogHelper
+import com.smartpilates.mobile.helpers.SharedPrfHelper
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -21,6 +25,11 @@ class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     lateinit var navController:NavController
+    lateinit var sharedPref:SharedPrfHelper
+    lateinit var root:View
+
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,13 +42,15 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        root = inflater.inflate(R.layout.fragment_home, container, false)
 
         homeViewModel= ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel.userName.observe(this, Observer {
             textViewWelcome.text = it
         })
 
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+
+        sharedPref= SharedPrfHelper(root.context)
 
         buttonListener(root)
         return root
@@ -86,4 +97,6 @@ class HomeFragment : Fragment() {
 
 
     }
+
+
 }
