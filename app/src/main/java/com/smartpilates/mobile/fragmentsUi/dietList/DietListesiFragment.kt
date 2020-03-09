@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smartpilates.mobile.R
@@ -28,6 +30,13 @@ class DietListesiFragment : Fragment() {
     private lateinit var recyclerView:RecyclerView
     private lateinit var sharedPref:SharedPrfHelper
 
+    lateinit var navController: NavController
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navController= Navigation.findNavController(view)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -4,14 +4,17 @@ package com.smartpilates.mobile.fragmentsUi.bilgiBankasi
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.smartpilates.mobile.R
-import com.smartpilates.mobile.adapters.HaberlerAdapter
 import com.smartpilates.mobile.fragmentsUi.bottomSheet.CategoryClickListener
 import com.smartpilates.mobile.fragmentsUi.bottomSheet.ItemListDialogFragment
 import com.smartpilates.mobile.model.HaberlerModel
@@ -32,14 +35,20 @@ class BilgiBankasiFragment : Fragment() {
     lateinit var bottomNavigationView:BottomNavigationView
     lateinit var bilgiBankasiViewModel:BilgiBankasiViewModel
     lateinit var recyclerView:RecyclerView
-    lateinit var haberlerAdapter:HaberlerAdapter
+    lateinit var bilgiBankasiAdapter: BilgiBankasiAdapter
     private lateinit var tags:MutableList<String>
     private lateinit var root:View
     private lateinit var bottomSheet:ItemListDialogFragment
 
+
     var haberlerList=ArrayList<HaberlerModel>()
 
+    lateinit var navController: NavController
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        navController= Navigation.findNavController(root)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -154,14 +163,15 @@ class BilgiBankasiFragment : Fragment() {
                 filteredList.add(it)
             }
         }
-        haberlerAdapter= HaberlerAdapter(filteredList)
-        recyclerView.adapter=haberlerAdapter
-        recyclerView.adapter!!.notifyDataSetChanged()
-
-        // SetCount on navbar
+        setRecyclerAdapter(filteredList)
         setOnlySelectedNavNumber(filteredList)
-
         setSortableTags(filteredList)
+    }
+
+    private fun setRecyclerAdapter(list: ArrayList<HaberlerModel>) {
+        bilgiBankasiAdapter= BilgiBankasiAdapter(list,listener)
+        recyclerView.adapter=bilgiBankasiAdapter
+        recyclerView.adapter!!.notifyDataSetChanged()
     }
 
     private fun setSortableTags(filteredList: ArrayList<HaberlerModel>) {
@@ -186,16 +196,8 @@ class BilgiBankasiFragment : Fragment() {
                     filteredList.add(it)
                 }
             }
-            haberlerAdapter= HaberlerAdapter(filteredList)
-            recyclerView.adapter=haberlerAdapter
-            recyclerView.adapter!!.notifyDataSetChanged()
-
-
+            setRecyclerAdapter(filteredList)
             setOnlySelectedNavNumber(filteredList)
-
-
-
-
         }
 
     }
@@ -245,6 +247,15 @@ class BilgiBankasiFragment : Fragment() {
             bottomNavigationView.getOrCreateBadge(R.id.bottom_nav_egzersiz).apply {
                 isVisible=false
             }
+        }
+
+    }
+
+    private val listener=object :HaberClickListener{
+        override fun onclicked(haberID: String) {
+            val bundle= bundleOf("haberID" to haberID )
+            navController.navigate(R.id.action_nav_bilgi_bankasi_to_nav_fragment_banka_detail,bundle)
+
         }
 
     }

@@ -35,6 +35,27 @@
     </fragment>
 
     <fragment
+        android:id="@+id/nav_bilgi_bankasi"
+        android:name="com.smartpilates.mobile.fragmentsUi.bilgiBankasi.BilgiBankasiFragment"
+        android:label="@string/bilgi_bankasi_string"
+        tools:layout="@layout/fragment_bilgi_bankasi" >
+        <action
+            android:id="@+id/action_nav_bilgi_bankasi_to_nav_fragment_banka_detail"
+            app:destination="@id/nav_fragment_banka_detail" >
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_fragment_banka_detail"
+        android:name="com.smartpilates.mobile.fragmentsUi.bilgiBankasiDetay.BilgiBankasiDetayFragment"
+        android:label="Detay"
+        tools:layout="@layout/fragment_bilgi_bankasi_detay" >
+        <action
+            android:id="@+id/action_nav_fragment_banka_detail_to_nav_bilgi_bankasi"
+            app:destination="@id/nav_bilgi_bankasi" />
+    </fragment>
+
+    <fragment
         android:id="@+id/nav_profile"
         android:name="com.smartpilates.mobile.fragmentsUi.profil.ProfileFragment"
         android:label="@string/profile_string"
@@ -73,12 +94,12 @@
         android:id="@+id/nav_diyet_list"
         android:name="com.smartpilates.mobile.fragmentsUi.dietList.DietListesiFragment"
         android:label="@string/diyet_listesi_string"
-        tools:layout="@layout/fragment_diet_listesi" />
-    <fragment
-        android:id="@+id/nav_bilgi_bankasi"
-        android:name="com.smartpilates.mobile.fragmentsUi.bilgiBankasi.BilgiBankasiFragment"
-        android:label="@string/bilgi_bankasi_string"
-        tools:layout="@layout/fragment_bilgi_bankasi" />
+        tools:layout="@layout/fragment_diet_listesi" >
+        <action
+            android:id="@+id/action_nav_diyet_list_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
     <fragment
         android:id="@+id/nav_uzmana_sor"
         android:name="com.smartpilates.mobile.fragmentsUi.uzmanaSor.UzmanaSorFragment"
