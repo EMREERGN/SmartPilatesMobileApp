@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,7 +29,7 @@ class MeasurementFragment : Fragment() {
         val view= inflater.inflate(R.layout.fragment_measurement, container, false)
 
 
-        measurementViewModel=ViewModelProviders.of(this).get(MeasurementViewModel::class.java)
+        measurementViewModel= ViewModelProvider(this).get(MeasurementViewModel::class.java)
 
         recyclerViewDiet=view.findViewById(R.id.recyclerViewDiet)
         recyclerViewDiet.apply {

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -55,7 +56,7 @@ class DietListesiFragment : Fragment() {
 
 
         dietViewModel =
-            ViewModelProviders.of(this).get(DietListesiViewModel::class.java)
+                ViewModelProvider(this).get(DietListesiViewModel::class.java)
         observeViewModel(dietViewModel)
 
 
@@ -66,7 +67,7 @@ class DietListesiFragment : Fragment() {
     private fun observeViewModel(viewModel: DietListesiViewModel) {
 
         viewModel.dietListObservable.observe(this,
-            Observer<ArrayList<DietListModel>> {
+            Observer {
                 // En başa anamnez raporu eklenir
                 it.add(0, DietListModel("",DietListViewHolder.ANAMNEZ_RAPORU_STRING,sharedPref.getUserID(),""))
                 if (it!=null){

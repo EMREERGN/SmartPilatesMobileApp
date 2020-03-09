@@ -15,6 +15,7 @@ class SharedPrfHelper(private val context: Context) {
         const val PORT_NUMBER_SHARED_PREF_KEY="SHARED_PREF_PORT_NUMBER_SMART_PLATES"
         const val IP_NUMBER_SHARED_PREF_KEY="SHARED_PREF_IP_NUMBER_SMART_PLATES"
         const val SHOW_NEVER_AGAIN_PERMISSION_SHARED_PREF_KEY="SHOW_NEVER_AGAIN_PERMISSION_SHARED_PREF_KEY"
+        const val HABER_ID_SHARED_PREF_KEY="HABER_ID_PREF_KEY"
 
     }
 
@@ -33,6 +34,21 @@ class SharedPrfHelper(private val context: Context) {
         val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
         return sharedPref.getBoolean(SHOW_NEVER_AGAIN_PERMISSION_SHARED_PREF_KEY,false)
     }
+
+
+    // haber Detay Id
+    fun setHaberId(haberID:String){
+        val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY,Context.MODE_PRIVATE) ?: return
+        with (sharedPref.edit()) {
+            putString(HABER_ID_SHARED_PREF_KEY, haberID)
+            commit()
+        }
+    }
+    fun getHaberID(): String {
+        val sharedPref = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE)
+        return sharedPref.getString(HABER_ID_SHARED_PREF_KEY,"null")!!
+    }
+
 
 
 

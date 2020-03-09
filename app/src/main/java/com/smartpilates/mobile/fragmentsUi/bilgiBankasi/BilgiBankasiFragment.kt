@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -71,7 +72,7 @@ class BilgiBankasiFragment : Fragment() {
 
 
         bilgiBankasiViewModel =
-            ViewModelProviders.of(this).get(BilgiBankasiViewModel::class.java)
+                ViewModelProvider(this).get(BilgiBankasiViewModel::class.java)
         observeViewModel(bilgiBankasiViewModel)
 
 

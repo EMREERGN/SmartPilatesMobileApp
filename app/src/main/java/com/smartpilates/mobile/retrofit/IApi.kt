@@ -30,4 +30,7 @@ interface IApi {
     @GET("all/haberler")
     fun getHaberler(): Call<ArrayList<HaberlerModel>>
 
+    @POST("get/haber")
+    fun postHaberDetay(@Body postID: HaberDetayPostModel): Call<ArrayList<HaberDetayModel>>
+
 }

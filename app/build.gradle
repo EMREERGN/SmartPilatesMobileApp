@@ -11,8 +11,8 @@ android {
         applicationId "com.smartpilates.mobile"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1000
-        versionName "1000-d"
+        versionCode 1002
+        versionName "1002-d"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true  //ADD THIS LINE
     }

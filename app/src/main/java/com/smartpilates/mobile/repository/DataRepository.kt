@@ -161,6 +161,29 @@ class DataRepository {
             return data
         }
 
+
+        fun getHaberDetay(haberId:String):LiveData<ArrayList<HaberDetayModel>>{
+            val retrofit=RetrofitClient.instance
+            val api=retrofit.create(IApi::class.java)
+
+            val postId=HaberDetayPostModel(haberId)
+            val data=MutableLiveData<ArrayList<HaberDetayModel>>()
+
+
+            api.postHaberDetay(postId).enqueue(object :Callback<ArrayList<HaberDetayModel>>{
+                override fun onFailure(call: Call<ArrayList<HaberDetayModel>>, t: Throwable) {
+
+                }
+
+                override fun onResponse(call: Call<ArrayList<HaberDetayModel>>, response: Response<ArrayList<HaberDetayModel>>) {
+                   data.value=response.body()
+                }
+
+            })
+
+            return data
+        }
+
     }
 
 }

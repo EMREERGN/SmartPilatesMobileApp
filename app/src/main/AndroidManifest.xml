@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SplashScreen">
+        <activity
+            android:theme="@style/NoActionBar"
+            android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +29,7 @@
             android:name=".WebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_web_view"
-            android:theme="@style/FullscreenTheme" />
+            android:theme="@style/NoActionBar" />
         <activity android:name=".LoginActivity">
 
         </activity>

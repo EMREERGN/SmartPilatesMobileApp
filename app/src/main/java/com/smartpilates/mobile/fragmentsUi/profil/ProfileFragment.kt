@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.smartpilates.mobile.R
 
@@ -32,7 +33,7 @@ class ProfileFragment : Fragment() {
         initViews(root)
 
         profileViewModel =
-            ViewModelProviders.of(this).get(ProfileViewModel::class.java)
+                ViewModelProvider(this).get(ProfileViewModel::class.java)
 
         observeViewModel(profileViewModel)
 

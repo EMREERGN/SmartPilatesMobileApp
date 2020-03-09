@@ -1,15 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragmentsUi.bilgiBankasiDetay.BilgiBankasiDetayFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/haberDetayTextId"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            tools:src="@drawable/logo_big"
+            android:id="@+id/haberDetayImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ImageView>
+
+        <LinearLayout
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginLeft="15dp"
+                android:id="@+id/categoryTextDetay"
+                android:textSize="15sp"
+                tools:text="Kategori : Beslenme / Beslenme Rehberi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textview.MaterialTextView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginLeft="15dp"
+                android:id="@+id/calendarTextDetay"
+                android:textStyle="italic"
+                android:textSize="10sp"
+                android:layout_marginTop="5dp"
+                tools:text="Paylaşım Tarihi : 15 Aralık 2019, 20:33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textview.MaterialTextView>
+        </LinearLayout>
+
+        <WebView
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/haberDetayWebView"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </WebView>
+
+    </LinearLayout>
+
+
+</ScrollView>

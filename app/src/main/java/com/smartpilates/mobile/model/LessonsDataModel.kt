@@ -23,5 +23,9 @@ data class LessonsGetDataModel(
 data class UserIDPostModel(
     @SerializedName("user_id")
     val user_id:String
-) {
-}
+)
+
+data class HaberDetayPostModel(
+        @SerializedName("id")
+        val id: String
+)

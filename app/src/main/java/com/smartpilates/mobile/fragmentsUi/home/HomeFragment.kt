@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 
 import androidx.navigation.NavController
@@ -33,7 +34,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        homeViewModel=ViewModelProviders.of(this).get(HomeViewModel::class.java)
+        homeViewModel= ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel.userName.observe(this, Observer {
             textViewWelcome.text = it
         })

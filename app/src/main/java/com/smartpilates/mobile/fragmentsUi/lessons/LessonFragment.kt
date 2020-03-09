@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +27,7 @@ class LessonFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         lessonViewModel =
-            ViewModelProviders.of(this).get(LessonViewModel::class.java)
+                ViewModelProvider(this).get(LessonViewModel::class.java)
         observeViewModel(lessonViewModel)
 
     }
@@ -51,7 +52,7 @@ class LessonFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.i("Lessonfragment","onCreateView")
         lessonViewModel =
-            ViewModelProviders.of(this).get(LessonViewModel::class.java)
+                ViewModelProvider(this).get(LessonViewModel::class.java)
         val root =inflater.inflate(R.layout.fragment_lesson_calendar, container, false)
 
         recyclerViewLessons=root.findViewById<RecyclerView>(R.id.recyclerViewLessons).apply {

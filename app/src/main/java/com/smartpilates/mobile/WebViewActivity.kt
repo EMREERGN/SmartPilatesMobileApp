@@ -27,7 +27,7 @@ class WebViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_web_view)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        GlobalFunctions.hideNavigationBar(this)
+       GlobalFunctions.hideNavigationBar(this)
 
         // Hide Navigation and status bar
         fullUrl=intent.getStringExtra(FULL_URL)!!
