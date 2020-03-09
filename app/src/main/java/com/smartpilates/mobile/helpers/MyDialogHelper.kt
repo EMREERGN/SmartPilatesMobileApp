@@ -83,6 +83,7 @@ class MyDialogHelper(private val activity: Activity) {
     }
 
 
+    //
 
     fun areYouSureQuit(){
         val sharedPrfHelper=SharedPrfHelper(activity)
