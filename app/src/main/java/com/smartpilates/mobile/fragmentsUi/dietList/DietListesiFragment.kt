@@ -9,15 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smartpilates.mobile.R
-import com.smartpilates.mobile.adapters.DietListAdapter
-import com.smartpilates.mobile.adapters.DietListViewHolder
-import com.smartpilates.mobile.fragmentsUi.lessons.LessonViewModel
 import com.smartpilates.mobile.helpers.SharedPrfHelper
 import com.smartpilates.mobile.model.DietListModel
 
@@ -27,7 +23,7 @@ import com.smartpilates.mobile.model.DietListModel
 class DietListesiFragment : Fragment() {
 
     private lateinit var dietViewModel: DietListesiViewModel
-    private lateinit var dietListAdapter:DietListAdapter
+    private lateinit var dietListAdapter: DietListAdapter
     private lateinit var recyclerView:RecyclerView
     private lateinit var sharedPref:SharedPrfHelper
 
@@ -69,11 +65,15 @@ class DietListesiFragment : Fragment() {
         viewModel.dietListObservable.observe(this,
             Observer {
                 // En başa anamnez raporu eklenir
-                it.add(0, DietListModel("",DietListViewHolder.ANAMNEZ_RAPORU_STRING,sharedPref.getUserID(),""))
+                it.add(0, DietListModel("",
+                    DietListViewHolder.ANAMNEZ_RAPORU_STRING,sharedPref.getUserID(),""))
                 if (it!=null){
                     Log.i("Lessonfragment",it.toString())
 
-                    dietListAdapter= DietListAdapter(it)
+                    dietListAdapter=
+                        DietListAdapter(
+                            it
+                        )
                     recyclerView.adapter=dietListAdapter
                     recyclerView.adapter!!.notifyDataSetChanged()
 

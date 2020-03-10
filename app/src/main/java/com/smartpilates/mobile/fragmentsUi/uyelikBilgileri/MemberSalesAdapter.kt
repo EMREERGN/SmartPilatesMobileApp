@@ -1,4 +1,4 @@
-package com.smartpilates.mobile.adapters
+package com.smartpilates.mobile.fragmentsUi.uyelikBilgileri
 
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +20,9 @@ class MemberSalesViewHolder(view:View):RecyclerView.ViewHolder(view){
 class MemberSalesAdapter (private val memberSaleList: ArrayList<MemberSalesModel>):RecyclerView.Adapter<MemberSalesViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemberSalesViewHolder {
         val view =LayoutInflater.from(parent.context).inflate(R.layout.member_sales_card_item,parent,false)
-        return MemberSalesViewHolder(view)
+        return MemberSalesViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int {

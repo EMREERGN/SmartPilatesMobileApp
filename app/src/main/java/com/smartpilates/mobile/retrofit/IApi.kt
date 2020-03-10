@@ -38,4 +38,6 @@ interface IApi {
     @POST("sent/contact")
     fun postMessage(@Body sendMessageModel: MessagePostModel):Call<MessageResponseModel>
 
+    @GET("get/bildirimler")
+    fun getNotifications(): Call<ArrayList<NotifResponseModel>>
 }

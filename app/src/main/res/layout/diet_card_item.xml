@@ -3,8 +3,8 @@
 
 <androidx.cardview.widget.CardView
     android:elevation="5dp"
-    app:cardCornerRadius="5dp"
-    android:layout_margin="5dp"
+    app:cardCornerRadius="6dp"
+    android:layout_margin="15dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,19 +18,15 @@
 
             <LinearLayout
                 android:padding="@dimen/diet_card_padding"
-                android:background="@drawable/gradiant_red"
+                android:background="@color/colorAccent"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ImageView
-                    android:src="@drawable/ic_end_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-
-                </ImageView>
-
                 <TextView
+                    android:drawableTint="@android:color/white"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_end_date"
                     android:text="@string/date"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
@@ -436,8 +432,10 @@
 
 
             <com.google.android.material.button.MaterialButton
+                app:iconGravity="textStart"
+                app:icon="@drawable/ic_report"
                 android:id="@+id/raporBtnDiet"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

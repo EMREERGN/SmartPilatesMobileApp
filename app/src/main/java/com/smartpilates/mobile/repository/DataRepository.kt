@@ -184,6 +184,28 @@ class DataRepository {
             return data
         }
 
+
+
+        fun getNotifications():LiveData<ArrayList<NotifResponseModel>>{
+            val retrofit=RetrofitClient.instance
+            val api=retrofit.create(IApi::class.java)
+            val data=MutableLiveData<ArrayList<NotifResponseModel>>()
+
+            api.getNotifications().enqueue(object :Callback<ArrayList<NotifResponseModel>>{
+                override fun onFailure(call: Call<ArrayList<NotifResponseModel>>, t: Throwable) {
+                }
+                override fun onResponse(
+                    call: Call<ArrayList<NotifResponseModel>>,
+                    response: Response<ArrayList<NotifResponseModel>>
+                ) {
+                   data.value=response.body()
+                }
+
+            })
+
+            return data
+        }
+
     }
 
 }

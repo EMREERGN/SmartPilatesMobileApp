@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smartpilates.mobile.R
-import com.smartpilates.mobile.adapters.MemberSalesAdapter
 
 class MemberSalesFragment : Fragment() {
 
@@ -50,7 +49,10 @@ class MemberSalesFragment : Fragment() {
         viewModel.memberSalesObservable.observe(this,
             Observer {
                 if (it!=null){
-                    memberSalesAdapter= MemberSalesAdapter((it))
+                    memberSalesAdapter=
+                        MemberSalesAdapter(
+                            (it)
+                        )
                     recyclerViewMemberSales.adapter=memberSalesAdapter
                     recyclerViewMemberSales.adapter!!.notifyDataSetChanged()
                 }

@@ -38,10 +38,6 @@
             android:icon="@drawable/ic_highlight"
             android:title="@string/bilgi_bankasi_string" />
 
-        <item
-            android:id="@+id/nav_uzmana_sor"
-            android:icon="@drawable/ic_send"
-            android:title="@string/uzmana_sor_string" />
 
 
 
@@ -55,14 +51,12 @@
                 android:id="@+id/nav_notifications"
                 android:icon="@drawable/ic_notifications"
                 android:title="@string/bildirimler_string" />
+
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:id="@+id/nav_uzmana_sor"
+                android:icon="@drawable/ic_send"
+                android:title="@string/uzmana_sor_string" />
+
         </menu>
     </item>
 

@@ -8,11 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smartpilates.mobile.R
-import com.smartpilates.mobile.adapters.DietAdapter
 
 
 class MeasurementFragment : Fragment() {
@@ -48,7 +46,10 @@ class MeasurementFragment : Fragment() {
     private fun observeViewModel(viewModel: MeasurementViewModel) {
         viewModel.dietInfoListObservable.observe(this, Observer {
             if (it!=null){
-                val dietAdapter=DietAdapter(it)
+                val dietAdapter=
+                    DietAdapter(
+                        it
+                    )
                 recyclerViewDiet.adapter=dietAdapter
                 recyclerViewDiet.adapter!!.notifyDataSetChanged()
             }

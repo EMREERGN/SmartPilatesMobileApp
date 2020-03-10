@@ -1,4 +1,4 @@
-package com.smartpilates.mobile.adapters
+package com.smartpilates.mobile.fragmentsUi.measurement
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -44,7 +44,9 @@ class DietAdapter(private val dietInfoList: ArrayList<DietInfoModel>) :
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.diet_card_item, parent, false)
 
-        return DietViewHolder(view)
+        return DietViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int {

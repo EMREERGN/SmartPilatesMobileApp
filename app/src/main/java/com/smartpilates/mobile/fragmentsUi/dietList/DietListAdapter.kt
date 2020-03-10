@@ -1,4 +1,4 @@
-package com.smartpilates.mobile.adapters
+package com.smartpilates.mobile.fragmentsUi.dietList
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.smartpilates.mobile.R
 import com.smartpilates.mobile.WebViewActivity
-import com.smartpilates.mobile.adapters.DietListViewHolder.Companion.ANAMNEZ_RAPORU_STRING
+import com.smartpilates.mobile.fragmentsUi.dietList.DietListViewHolder.Companion.ANAMNEZ_RAPORU_STRING
 import com.smartpilates.mobile.model.DietListModel
 
 
@@ -33,7 +33,9 @@ class DietListAdapter(private val dietList:ArrayList<DietListModel>):RecyclerVie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DietListViewHolder {
         val root =LayoutInflater.from(parent.context).inflate(R.layout.diet_list_card_item,parent,false)
 
-        return DietListViewHolder(root)
+        return DietListViewHolder(
+            root
+        )
     }
 
     override fun getItemCount(): Int {

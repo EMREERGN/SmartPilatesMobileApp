@@ -6,18 +6,16 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.smartpilates.mobile.R
-import com.smartpilates.mobile.adapters.LessonsAdapater
 import com.smartpilates.mobile.model.LessonsGetDataModel
 
 class LessonFragment : Fragment() {
     lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var lessonViewModel: LessonViewModel
-    private lateinit var lessonsAdapater:LessonsAdapater
+    private lateinit var lessonsAdapater: LessonsAdapater
     private lateinit var recyclerViewLessons:RecyclerView
 
     private var allLessonList=ArrayList<LessonsGetDataModel>()
@@ -114,7 +112,10 @@ class LessonFragment : Fragment() {
             }
         }
 
-        lessonsAdapater= LessonsAdapater(filteredList)
+        lessonsAdapater=
+            LessonsAdapater(
+                filteredList
+            )
         recyclerViewLessons.adapter=lessonsAdapater
         recyclerViewLessons.adapter!!.notifyDataSetChanged()
     }

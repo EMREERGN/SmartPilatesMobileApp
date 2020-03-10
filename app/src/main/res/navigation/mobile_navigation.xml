@@ -84,17 +84,6 @@
 
 
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.smartpilates.mobile.fragmentsUi.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.smartpilates.mobile.fragmentsUi.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
-    <fragment
         android:id="@+id/nav_measurement_information"
         android:name="com.smartpilates.mobile.fragmentsUi.measurement.MeasurementFragment"
         android:label="@string/measurement_information_string"
@@ -116,7 +105,7 @@
         tools:layout="@layout/fragment_uzmana_sor" />
     <fragment
         android:id="@+id/nav_notifications"
-        android:name="com.smartpilates.mobile.fragmentsUi.notifications.BildirimlerFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.notifications.NotifFragment"
         android:label="@string/bildirimler_string"
         tools:layout="@layout/fragment_bildirimler" />
 </navigation>

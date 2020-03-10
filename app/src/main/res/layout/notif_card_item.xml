@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    app:cardCornerRadius="5dp"
+    android:layout_margin="10dp"
+    android:elevation="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+
+            android:id="@+id/notifTitleTxt"
+            android:textStyle="bold"
+            tools:text="7 Gün Açığız"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/notifContentTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            tools:text="Bu haftadan itibaren Pazar günleride açığız .Seans planlama hakkında taleplerinizi merkezimize iletebilirsiniz .">
+
+        </TextView>
+
+        <TextView
+            android:drawablePadding="5dp"
+            android:id="@+id/notifDateTxt"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_date"
+            tools:text="3 Şubat 2020, 10:00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

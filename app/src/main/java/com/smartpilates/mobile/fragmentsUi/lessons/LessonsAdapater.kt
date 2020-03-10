@@ -1,4 +1,4 @@
-package com.smartpilates.mobile.adapters
+package com.smartpilates.mobile.fragmentsUi.lessons
 
 import android.view.LayoutInflater
 import android.view.View
