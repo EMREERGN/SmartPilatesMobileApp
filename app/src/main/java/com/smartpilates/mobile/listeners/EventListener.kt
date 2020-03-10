@@ -4,3 +4,7 @@ interface EventListener {
     fun loginFetchComplete(){
     }
 }
+
+interface OnBackPressed {
+    fun onBackPressed()
+}

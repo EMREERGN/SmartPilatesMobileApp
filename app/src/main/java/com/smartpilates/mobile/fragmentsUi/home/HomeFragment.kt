@@ -18,10 +18,11 @@ import com.smartpilates.mobile.fragmentsUi.bottomSheet.CategoryClickListener
 import com.smartpilates.mobile.fragmentsUi.bottomSheet.ItemListDialogFragment
 import com.smartpilates.mobile.helpers.MyDialogHelper
 import com.smartpilates.mobile.helpers.SharedPrfHelper
+import com.smartpilates.mobile.listeners.OnBackPressed
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment() ,OnBackPressed {
 
     private lateinit var homeViewModel: HomeViewModel
     lateinit var navController:NavController
@@ -29,6 +30,9 @@ class HomeFragment : Fragment() {
     lateinit var root:View
 
 
+    override fun onBackPressed() {
+        activity!!.supportFragmentManager.popBackStack()
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -97,6 +101,7 @@ class HomeFragment : Fragment() {
 
 
     }
+
 
 
 }

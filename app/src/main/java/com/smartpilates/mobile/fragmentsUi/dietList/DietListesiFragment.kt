@@ -15,12 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.smartpilates.mobile.R
 import com.smartpilates.mobile.helpers.SharedPrfHelper
+import com.smartpilates.mobile.listeners.OnBackPressed
 import com.smartpilates.mobile.model.DietListModel
 
 /**
  * A simple [Fragment] subclass.
  */
-class DietListesiFragment : Fragment() {
+class DietListesiFragment : Fragment(){
 
     private lateinit var dietViewModel: DietListesiViewModel
     private lateinit var dietListAdapter: DietListAdapter
@@ -28,6 +29,7 @@ class DietListesiFragment : Fragment() {
     private lateinit var sharedPref:SharedPrfHelper
 
     lateinit var navController: NavController
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
