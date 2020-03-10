@@ -1,10 +1,8 @@
-package com.smartpilates.mobile.fragmentsUi.memberSales
+package com.smartpilates.mobile.fragmentsUi.uyelikBilgileri
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.smartpilates.mobile.helpers.SharedPrfHelper
 import com.smartpilates.mobile.model.MemberSalesModel
 import com.smartpilates.mobile.repository.DataRepository

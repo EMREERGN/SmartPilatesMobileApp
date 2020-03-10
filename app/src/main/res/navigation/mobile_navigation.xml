@@ -72,7 +72,7 @@
 
     <fragment
         android:id="@+id/nav_member_data"
-        android:name="com.smartpilates.mobile.fragmentsUi.memberSales.MemberSalesFragment"
+        android:name="com.smartpilates.mobile.fragmentsUi.uyelikBilgileri.MemberSalesFragment"
         android:label="@string/data_member_string"
         tools:layout="@layout/fragment_member_data" />
 
