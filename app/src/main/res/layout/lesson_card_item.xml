@@ -4,7 +4,7 @@
         app:cardBackgroundColor="@android:color/white"
         android:elevation="5dp"
         app:cardCornerRadius="5dp"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -16,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
         <androidx.appcompat.widget.AppCompatTextView
+            android:background="@drawable/gradiant_blue2"
                 android:id="@+id/lessonTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -25,38 +25,25 @@
                 android:text="Ev Egzersizleri#1"
                 android:textColor="#000000"
                 android:textSize="22sp" />
-        <View
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"/>
-        <LinearLayout
-                android:layout_margin="10dp"
-                android:weightSum="5"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+
+
             <LinearLayout
-                    android:layout_weight="3"
+                android:padding="10dp"
                     android:orientation="vertical"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
                 <LinearLayout
+
                         android:weightSum="10"
                         android:layout_marginBottom="5dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                    <ImageView
-                            android:layout_weight="2"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/ic_date"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"/>
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_weight="2"
+                        android:drawablePadding="5dp"
+                        android:drawableLeft="@drawable/ic_date"
+                            android:layout_weight="3"
                             android:textColor="@android:color/black"
                             android:textStyle="bold"
                             android:gravity="center_vertical"
@@ -66,7 +53,7 @@
                             android:layout_height="match_parent"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_weight="6"
+                            android:layout_weight="7"
                             android:layout_width="0dp"
                             android:textColor="@color/black_overlay"
                             android:id="@+id/lessonDate"
@@ -82,14 +69,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                    <ImageView
-                            android:layout_weight="2"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/ic_alarm"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"/>
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_weight="2"
+                        android:drawablePadding="5dp"
+                        android:drawableLeft="@drawable/ic_alarm"
+                            android:layout_weight="3"
                             android:textColor="@android:color/black"
                             android:textStyle="bold"
                             android:gravity="center_vertical"
@@ -101,7 +84,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/lessonTime"
                             android:textColor="@color/black_overlay"
-                            android:layout_weight="6"
+                            android:layout_weight="7"
                             android:layout_width="0dp"
                             android:gravity="center_vertical"
                             android:layout_gravity="center_vertical"
@@ -115,15 +98,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                    <ImageView
-                            android:layout_weight="2"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/ic_home"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"/>
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:drawablePadding="5dp"
+                        android:drawableLeft="@drawable/ic_home"
                             android:textColor="@android:color/black"
-                            android:layout_weight="2"
+                            android:layout_weight="3"
                             android:textStyle="bold"
                             android:gravity="center_vertical"
                             android:layout_gravity="center_vertical"
@@ -134,7 +113,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/lessonName"
                             android:textColor="@color/black_overlay"
-                            android:layout_weight="6"
+                            android:layout_weight="7"
                             android:layout_width="0dp"
                             android:gravity="center_vertical"
                             android:layout_gravity="center_vertical"
@@ -144,15 +123,8 @@
 
             </LinearLayout>
 
-
-
-
         </LinearLayout>
 
-
-
-
-    </LinearLayout>
 
 
 </com.google.android.material.card.MaterialCardView>

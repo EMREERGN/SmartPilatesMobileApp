@@ -62,12 +62,7 @@ class LessonsAdapater(private val lessonList:ArrayList<LessonsGetDataModel>):Rec
         }
         // GELECEK DERSLER
         else{
-            if (position%2==0){
-                holder.container.background=ContextCompat.getDrawable(holder.itemView.context,android.R.color.white)
-            }
-            else{
-                holder.container.background=ContextCompat.getDrawable(holder.itemView.context,R.drawable.gradient_future_lessons)
-            }
+
         }
 
 
