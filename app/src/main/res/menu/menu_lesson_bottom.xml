@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_nav_gelecek_dersler"
+        android:icon="@drawable/ic_date"
+        android:title="@string/gelecek_dersler" />
+
+    <item
+        android:id="@+id/bottom_nav_gecmis_dersler"
+        android:icon="@drawable/ic_end_date"
+        android:title="@string/gecmis_dersler" />
+
+</menu>

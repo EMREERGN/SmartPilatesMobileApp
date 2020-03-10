@@ -10,9 +10,29 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewLessons"
-        tools:listitem="@layout/lesson_card_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_lessons"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/lesson_card_item">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_lessons"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        app:elevation="5dp"
+        app:itemIconTint="@drawable/bottom_navigation_colors"
+        app:itemTextColor="@android:color/black"
+        app:itemBackground="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_lesson_bottom"
+        tools:layout_editor_absoluteX="0dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

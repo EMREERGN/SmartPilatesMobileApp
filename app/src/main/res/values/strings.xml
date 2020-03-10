@@ -84,5 +84,7 @@
     <string name="mesaj_title">Mesajınızın Konusu</string>
     <string name="escape">Çıkış Yap</string>
     <string name="splash_screen">Splash Screen</string>
+    <string name="gelecek_dersler">Gelecek Dersler</string>
+    <string name="gecmis_dersler">Geçmiş Dersler</string>
 
 </resources>
