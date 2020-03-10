@@ -1,6 +1,7 @@
 package com.smartpilates.mobile.fragmentsUi.home
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AlertDialog
@@ -13,12 +14,17 @@ import androidx.lifecycle.ViewModelProviders
 
 import androidx.navigation.NavController
 import androidx.navigation.Navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.smartpilates.mobile.R
 import com.smartpilates.mobile.fragmentsUi.bottomSheet.CategoryClickListener
 import com.smartpilates.mobile.fragmentsUi.bottomSheet.ItemListDialogFragment
+import com.smartpilates.mobile.fragmentsUi.notifications.NotifAdapter
+import com.smartpilates.mobile.fragmentsUi.notifications.NotifViewModel
 import com.smartpilates.mobile.helpers.MyDialogHelper
 import com.smartpilates.mobile.helpers.SharedPrfHelper
 import com.smartpilates.mobile.listeners.OnBackPressed
+import com.smartpilates.mobile.model.NotifResponseModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -28,6 +34,9 @@ class HomeFragment : Fragment() ,OnBackPressed {
     lateinit var navController:NavController
     lateinit var sharedPref:SharedPrfHelper
     lateinit var root:View
+    lateinit var homeNotifRecyclerView:RecyclerView
+
+    lateinit var notifViewModel:NotifViewModel
 
 
     override fun onBackPressed() {
@@ -46,18 +55,57 @@ class HomeFragment : Fragment() ,OnBackPressed {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        root = inflater.inflate(R.layout.fragment_home, container, false)
-
-        homeViewModel= ViewModelProvider(this).get(HomeViewModel::class.java)
-        homeViewModel.userName.observe(this, Observer {
-            textViewWelcome.text = it
-        })
-
+        root = inflater.inflate(R.layout.home_fragment_new, container, false)
 
         sharedPref= SharedPrfHelper(root.context)
 
+        homeViewModel= ViewModelProvider(this).get(HomeViewModel::class.java)
+        notifViewModel=ViewModelProvider(this).get(NotifViewModel::class.java)
+
+        homeViewModel.userName.observe(this, Observer {
+            textViewWelcome.text = it
+        })
+        notifViewModel.notifResponseObservable.observe(this, Observer {
+            updateNotifRecycer(it)
+        })
+
+
+
+
+        val lm=LinearLayoutManager(root.context,LinearLayoutManager.HORIZONTAL,false)
+        homeNotifRecyclerView=root.findViewById(R.id.homeNotifRecyclerView)
+        homeNotifRecyclerView.apply {
+            setHasFixedSize(true)
+            layoutManager=lm
+        }
+
+
+
         buttonListener(root)
         return root
+
+    }
+    private fun updateNotifRecycer(notifList:ArrayList<NotifResponseModel>){
+        val notifAdapter=NotifAdapter(notifList)
+        homeNotifRecyclerView.apply {
+            adapter=notifAdapter.apply {
+                notifyDataSetChanged()
+            }
+        }
+
+        var index=0
+        object:CountDownTimer(notifList.size.times(5000).toLong(),5000){
+            override fun onFinish() {
+                index=0
+                this.start()
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                homeNotifRecyclerView.smoothScrollToPosition(index)
+                index++
+            }
+        }.start()
+
 
     }
 

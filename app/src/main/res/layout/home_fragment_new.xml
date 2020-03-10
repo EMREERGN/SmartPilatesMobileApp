@@ -12,8 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="80dp">
         <TextView
+
+            android:id="@+id/textViewWelcome"
             android:gravity="center_vertical"
-            android:textSize="30sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:padding="5dp"
             android:text="Ahmet Eker"
@@ -30,175 +32,207 @@
         </ImageView>
 
     </RelativeLayout>
+    <View
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+
+    </View>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/homeNotifRecyclerView"
         tools:listitem="@layout/notif_card_item"
-        android:padding="5dp"
+
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="175dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+    <View
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
 
-    <LinearLayout
-        android:background="@drawable/gradiant_blue"
-        android:orientation="vertical"
+    </View>
+    <ScrollView
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <LinearLayout
-            android:weightSum="2"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.cardview.widget.CardView
-                android:elevation="4dp"
-                android:layout_margin="3dp"
-                app:cardCornerRadius="5dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:padding="30dp"
-                    android:drawableTop="@drawable/ic_calendar"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="@string/lesson_calendar_string"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </TextView>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:elevation="4dp"
-                android:layout_margin="3dp"
-                app:cardCornerRadius="5dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:padding="30dp"
-                    android:drawableTop="@drawable/ic_data_member"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="@string/data_member_string"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </TextView>
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-        <LinearLayout
-            android:weightSum="2"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.cardview.widget.CardView
-                android:elevation="4dp"
-                android:layout_margin="3dp"
-                app:cardCornerRadius="5dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:padding="30dp"
-                    android:drawableTop="@drawable/ic_home"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="@string/measurement_information_string"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </TextView>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:elevation="4dp"
-                android:layout_margin="3dp"
-                app:cardCornerRadius="5dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:padding="30dp"
-                    android:drawableTop="@drawable/ic_home"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="@string/diyet_listesi_string"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </TextView>
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
         <LinearLayout
 
-            android:weightSum="2"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.cardview.widget.CardView
-                android:elevation="4dp"
-                android:layout_margin="3dp"
-                app:cardCornerRadius="5dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:padding="30dp"
-                    android:drawableTop="@drawable/ic_home"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="@string/bilgi_bankasi_string"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </TextView>
+            android:layout_height="match_parent">
 
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:elevation="4dp"
-                android:layout_margin="3dp"
-                app:cardCornerRadius="5dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:padding="30dp"
-                    android:drawableTop="@drawable/ic_home"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="@string/profile_string"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </TextView>
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.cardview.widget.CardView
-                android:elevation="4dp"
-                android:layout_margin="3dp"
-                app:cardCornerRadius="5dp"
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:padding="30dp"
-                    android:drawableTop="@drawable/ic_home"
-                    android:gravity="center"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorAccent"
+                    android:id="@+id/lessonCalenndarContainer"
+                    android:elevation="4dp"
+                    android:layout_margin="3dp"
+                    app:cardCornerRadius="5dp"
                     android:layout_weight="1"
-                    android:text="@string/uzmana_sor_string"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:padding="30dp"
+                        android:drawableTop="@drawable/ic_calendar"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/lesson_calendar_string"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorAccent"
+                    android:id="@+id/dataMemberContainer"
+                    android:elevation="4dp"
+                    android:layout_margin="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:padding="30dp"
+                        android:drawableTop="@drawable/ic_data_member"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/data_member_string"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorAccent"
+                    android:id="@+id/measurementInfoContainer"
+                    android:elevation="4dp"
+                    android:layout_margin="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:padding="30dp"
+                        android:drawableTop="@drawable/ic_home"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/measurement_information_string"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorAccent"
+                    android:id="@+id/dietListContainer"
+                    android:elevation="4dp"
+                    android:layout_margin="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:padding="30dp"
+                        android:drawableTop="@drawable/ic_home"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/diyet_listesi_string"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorAccent"
+                    android:id="@+id/bilgiBankContainer"
+                    android:elevation="4dp"
+                    android:layout_margin="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:padding="30dp"
+                        android:drawableTop="@drawable/ic_home"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/bilgi_bankasi_string"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorAccent"
+                    android:id="@+id/profilContainer"
+                    android:elevation="4dp"
+                    android:layout_margin="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:padding="30dp"
+                        android:drawableTop="@drawable/ic_home"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/profile_string"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorAccent"
+                    android:id="@+id/askUzmanContainer"
+                    android:elevation="4dp"
+                    android:layout_margin="3dp"
+                    app:cardCornerRadius="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                </TextView>
+                    <TextView
+                        android:padding="30dp"
+                        android:drawableTop="@drawable/ic_home"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/uzmana_sor_string"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </TextView>
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
 
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
+
 
 
 </LinearLayout>
