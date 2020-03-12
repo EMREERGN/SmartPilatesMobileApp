@@ -28,7 +28,6 @@ class SharedPrfHelper(private val context: Context) {
             putBoolean(SHOW_NEVER_AGAIN_PERMISSION_SHARED_PREF_KEY, isCheck)
             commit()
         }
-
     }
 
     // NEVER Again Check

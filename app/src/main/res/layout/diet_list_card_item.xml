@@ -52,14 +52,15 @@
         </TextView>
 
         <com.google.android.material.button.MaterialButton
-            android:padding="10dp"
+            android:padding="15dp"
             android:layout_marginBottom="10dp"
             android:id="@+id/dietListesiButton"
             android:text="@string/raporu_goruntule"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center"
-            app:icon="@drawable/ic_calendar"
+            app:icon="@drawable/ic_find"
+            app:iconGravity="textStart"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

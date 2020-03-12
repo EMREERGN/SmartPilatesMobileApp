@@ -3,6 +3,7 @@ package com.smartpilates.mobile
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.webkit.WebSettings
 import androidx.appcompat.app.AppCompatActivity
 import com.smartpilates.mobile.helpers.GlobalFunctions
 import kotlinx.android.synthetic.main.activity_web_view.*
@@ -19,6 +20,10 @@ class WebViewActivity : AppCompatActivity() {
         const val PDF_ID="PDF_ID"
     }
 
+    override fun onBackPressed() {
+
+        finish()
+    }
 
     @SuppressLint("NewApi", "SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,36 +46,24 @@ class WebViewActivity : AppCompatActivity() {
 
     private fun openWebView(fullUrl: String) {
         Log.i(TAG,fullUrl)
+
         webviewRapor.settings.javaScriptEnabled = true
+
+
+        webviewRapor.settings.allowFileAccess = true;
+        webviewRapor.settings.allowUniversalAccessFromFileURLs=true;
+
+        webviewRapor.settings.domStorageEnabled = true
+        webviewRapor.settings.databaseEnabled = true
+
+        webviewRapor.settings.setAppCacheEnabled(true)
+        webviewRapor.settings.setAppCachePath(cacheDir.absolutePath)
+        webviewRapor.settings.cacheMode = WebSettings.LOAD_DEFAULT
+
         webviewRapor.loadUrl(fullUrl)
+        webviewRapor.invalidate()
     }
 
-   /* private fun checkFileAlreadyExist(id: String) {
-        val pdfLink="https://smartpilates.net/uploads/tanita/${id}.pdf"
-        val fullUrl = "https://docs.google.com/gview?embedded=true&url=$pdfLink"
-
-        openViewer(id,fullUrl)
-
-        // TODO daha sonra indirme ve gösterme işlemleri yapılacak PDF İçin
-       *//* if (FileManager.checkFileIsAlreadyExists(id)){
-            FileManager.openPDfFile(this,id)
-        }
-        else{
-
-            openViewer(id,fullUrl)
-            DownloadFile().execute(fullUrl,"$id.pdf")
-
-
-        }*//*
-
-    }*/
-
-  /*  private fun openViewer(id: String,fullUrl:String) {
-
-        Log.i(TAG,fullUrl)
-        webviewRapor.settings.javaScriptEnabled = true
-        webviewRapor.loadUrl(fullUrl)
-    }*/
 
 
 }

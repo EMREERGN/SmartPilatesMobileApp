@@ -65,9 +65,9 @@ class HomeFragment : Fragment() ,OnBackPressed {
         homeViewModel.userName.observe(this, Observer {
             textViewWelcome.text = it
         })
-        notifViewModel.notifResponseObservable.observe(this, Observer {
+       /* notifViewModel.notifResponseObservable.observe(this, Observer {
             updateNotifRecycer(it)
-        })
+        })*/
 
 
 
@@ -148,6 +148,14 @@ class HomeFragment : Fragment() ,OnBackPressed {
         }
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+
+        inflater.inflate(R.menu.main,menu)
+        menu.findItem(R.id.action_quit_are_you_sure).isVisible = true
+
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
 

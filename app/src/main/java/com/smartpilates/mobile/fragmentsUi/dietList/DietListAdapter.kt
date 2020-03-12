@@ -1,5 +1,6 @@
 package com.smartpilates.mobile.fragmentsUi.dietList
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +43,7 @@ class DietListAdapter(private val dietList:ArrayList<DietListModel>):RecyclerVie
        return dietList.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: DietListViewHolder, position: Int) {
         val diet=dietList[position]
 
@@ -71,6 +73,7 @@ class DietListAdapter(private val dietList:ArrayList<DietListModel>):RecyclerVie
                 val fullUrl = "https://docs.google.com/gview?embedded=true&url=$pdfLink"
 
                 val intent= Intent(holder.context, WebViewActivity::class.java)
+                //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 intent.putExtra(WebViewActivity.FULL_URL,fullUrl)
                 holder.context.startActivity(intent)
             }

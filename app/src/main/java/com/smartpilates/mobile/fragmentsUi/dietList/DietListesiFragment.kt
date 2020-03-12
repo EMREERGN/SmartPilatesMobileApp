@@ -68,14 +68,14 @@ class DietListesiFragment : Fragment(){
             Observer {
                 // En başa anamnez raporu eklenir
                 it.add(0, DietListModel("",
-                    DietListViewHolder.ANAMNEZ_RAPORU_STRING,sharedPref.getUserID(),""))
+                    DietListViewHolder.ANAMNEZ_RAPORU_STRING,
+                    sharedPref.getUserID(),
+                    ""))
+
                 if (it!=null){
                     Log.i("Lessonfragment",it.toString())
 
-                    dietListAdapter=
-                        DietListAdapter(
-                            it
-                        )
+                    dietListAdapter= DietListAdapter(it)
                     recyclerView.adapter=dietListAdapter
                     recyclerView.adapter!!.notifyDataSetChanged()
 
