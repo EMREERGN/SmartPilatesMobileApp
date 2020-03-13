@@ -5,22 +5,33 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\Emre\\Desktop\\Android Projects\\SmartPilatesMobileApp\\smartPilatesApp.jks')
+            storePassword '123456'
+            keyAlias = '123456'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "com.smartpilates.mobile"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1004
-        versionName "1004-d"
+        versionCode 1005
+        versionName "1005-r"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true  //ADD THIS LINE
+        multiDexEnabled true
+        signingConfig signingConfigs.release//ADD THIS LINE
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable = false
         }
+
     }
     applicationVariants.all { variant ->
         variant.outputs.all {

@@ -432,13 +432,19 @@
 
 
             <com.google.android.material.button.MaterialButton
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:padding="@dimen/padding_button"
                 app:iconGravity="textStart"
                 app:icon="@drawable/ic_report"
                 android:id="@+id/raporBtnDiet"
+
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+
                 android:text="Raporu Görüntüle"
                 app:strokeColor="@android:color/holo_green_dark">
 

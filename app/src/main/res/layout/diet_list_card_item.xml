@@ -52,7 +52,7 @@
         </TextView>
 
         <com.google.android.material.button.MaterialButton
-            android:padding="15dp"
+            android:padding="@dimen/padding_button"
             android:layout_marginBottom="10dp"
             android:id="@+id/dietListesiButton"
             android:text="@string/raporu_goruntule"
