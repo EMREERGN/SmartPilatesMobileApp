@@ -13,4 +13,6 @@
     <dimen name="list_item_spacing">16dp</dimen>
     <dimen name="list_item_spacing_half">8dp</dimen>
     <dimen name="padding_button">15dp</dimen>
+    <dimen name="drawablePadding">10dp</dimen>
+    <dimen name="ad_height">75dp</dimen>
 </resources>

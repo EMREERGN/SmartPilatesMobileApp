@@ -3,6 +3,7 @@ package com.smartpilates.mobile
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -49,9 +50,6 @@ class MainActivity : AppCompatActivity(),OnBackPressed {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        buttonListeners()
-
-
         val fab: FloatingActionButton = findViewById(R.id.fab)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
@@ -85,7 +83,23 @@ class MainActivity : AppCompatActivity(),OnBackPressed {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
+        menu.findItem(R.id.action_quit_are_you_sure).isVisible = true
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.action_quit_are_you_sure->{
+                quitUser()
+            }
+        }
+
+
+        return true
+    }
+    private fun quitUser(){
+        myDialogHelper.areYouSureQuit()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -93,7 +107,4 @@ class MainActivity : AppCompatActivity(),OnBackPressed {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    private fun buttonListeners() {
-
-    }
 }

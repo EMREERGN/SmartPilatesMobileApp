@@ -53,7 +53,7 @@ class RetrofitHelper {
 
                     Log.i("LOGIN_",response.body().toString())
                     Toast.makeText(context,
-                        "Talebiniz alınamadı, lütfen daha sonra tekrar deneyiniz.",
+                        "Giriş Bilgilerini Giriniz",
                         Toast.LENGTH_LONG).show()
                 }
             }
