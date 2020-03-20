@@ -2,6 +2,8 @@ package com.smartpilates.mobile.helpers
 
 import android.content.Context
 import android.util.Log
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 
 class SharedPrfHelper(private val context: Context) {

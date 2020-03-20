@@ -14,11 +14,15 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.work.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
+import com.smartpilates.mobile.backgroundTask.NotificationWorker
 import com.smartpilates.mobile.fragmentsUi.home.HomeFragment
 import com.smartpilates.mobile.helpers.MyDialogHelper
+import com.smartpilates.mobile.helpers.NotificationManager
 import com.smartpilates.mobile.listeners.OnBackPressed
+import java.util.concurrent.TimeUnit
 
 
 class MainActivity : AppCompatActivity(),OnBackPressed {
@@ -62,8 +66,6 @@ class MainActivity : AppCompatActivity(),OnBackPressed {
         }
 
 
-
-
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -75,6 +77,11 @@ class MainActivity : AppCompatActivity(),OnBackPressed {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+
+        setWorkManager()
+
 
     }
 
@@ -105,6 +112,27 @@ class MainActivity : AppCompatActivity(),OnBackPressed {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+
+    private fun setWorkManager(){
+
+        val constraints = Constraints.Builder()
+            .setRequiresCharging(false)
+            .build()
+
+        val notifWorkerRequest=
+            PeriodicWorkRequestBuilder<NotificationWorker>(1,TimeUnit.HOURS)
+                .setConstraints(constraints)
+                .build()
+
+        WorkManager
+            .getInstance(this)
+            .enqueueUniquePeriodicWork(
+                NotificationWorker.UNIQ_WORK_NAME,
+                ExistingPeriodicWorkPolicy.KEEP, // eski işi devam ettir
+                notifWorkerRequest)
+
     }
 
 }

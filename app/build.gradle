@@ -19,8 +19,8 @@ android {
         applicationId "com.smartpilates.mobile"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1005
-        versionName "1005-r"
+        versionCode 1007
+        versionName "1007-d"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         signingConfig signingConfigs.release//ADD THIS LINE
@@ -79,16 +79,18 @@ dependencies {
 
 
     // Kotlin + coroutines
-    implementation "androidx.work:work-runtime-ktx:2.3.2"
+    implementation "androidx.work:work-runtime-ktx:2.3.3"
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.8.0'
 
 
-    implementation 'com.android.support:support-v4:29.+'
-    implementation 'com.android.support:design:29.+'
-    implementation 'com.android.support:recyclerview-v7:29.+'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.android.support:support-v4:'
+    implementation 'com.android.support:design:'
+    implementation 'com.android.support:recyclerview-v7:'
+
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     implementation 'androidx.multidex:multidex:2.0.1'
 

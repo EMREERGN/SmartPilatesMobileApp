@@ -2,6 +2,7 @@ package com.smartpilates.mobile.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.smartpilates.mobile.backgroundTask.NotificationListener
 import com.smartpilates.mobile.model.*
 import com.smartpilates.mobile.retrofit.IApi
 import com.smartpilates.mobile.retrofit.RetrofitClient
@@ -206,6 +207,25 @@ class DataRepository {
             return data
         }
 
+
+        fun getNotificationsWithListener(listener:NotificationListener) {
+            val retrofit=RetrofitClient.instance
+            val api=retrofit.create(IApi::class.java)
+            var data=ArrayList<NotifResponseModel>()
+            api.getNotifications().enqueue(object :Callback<ArrayList<NotifResponseModel>>{
+                override fun onFailure(call: Call<ArrayList<NotifResponseModel>>, t: Throwable) {
+                }
+                override fun onResponse(
+                    call: Call<ArrayList<NotifResponseModel>>,
+                    response: Response<ArrayList<NotifResponseModel>>
+                ) {
+                    if (response.body()!=null){
+                        data=response.body()!!
+                        listener.onCompleteFetchData(data)
+                    }
+                }
+            })
+        }
     }
 
 }
