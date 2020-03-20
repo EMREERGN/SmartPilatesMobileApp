@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-    app:cardBackgroundColor="@android:color/black"
+    android:visibility="gone"
+    app:cardBackgroundColor="@android:color/holo_blue_light"
     app:cardCornerRadius="5dp"
     android:layout_margin="10dp"
     android:elevation="5dp"
@@ -18,10 +19,9 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:textColor="@android:color/holo_red_dark"
+            android:textColor="@android:color/black"
             android:textSize="40sp"
             android:gravity="center"
-            android:textStyle="bold"
             android:text="Your Ad Here"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

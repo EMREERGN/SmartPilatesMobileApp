@@ -80,7 +80,8 @@ class MainActivity : AppCompatActivity(),OnBackPressed {
 
 
 
-        setWorkManager()
+        // Notification Background Worker Start , KEEP
+        NotificationWorker.setPeriodicRequest(this)
 
 
     }
@@ -115,24 +116,6 @@ class MainActivity : AppCompatActivity(),OnBackPressed {
     }
 
 
-    private fun setWorkManager(){
 
-        val constraints = Constraints.Builder()
-            .setRequiresCharging(false)
-            .build()
-
-        val notifWorkerRequest=
-            PeriodicWorkRequestBuilder<NotificationWorker>(1,TimeUnit.HOURS)
-                .setConstraints(constraints)
-                .build()
-
-        WorkManager
-            .getInstance(this)
-            .enqueueUniquePeriodicWork(
-                NotificationWorker.UNIQ_WORK_NAME,
-                ExistingPeriodicWorkPolicy.KEEP, // eski işi devam ettir
-                notifWorkerRequest)
-
-    }
 
 }
